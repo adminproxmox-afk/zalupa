@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - Перевірка знань</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/platform.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/lecture_content.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <div class="nav__actions">
+                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../index.html" class="nav__link">Головна</a></li>
+                    <li><a href="lectures.html" class="nav__link">Лекції</a></li>
+                    <li><a href="graph_editor.html" class="nav__link">Редактор графів</a></li>
+                    <li><a href="assessment.html" class="nav__link">Оцінювання</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-shell quiz-page">
+        <section class="page-hero">
+            <div>
+                <p class="page-kicker">Самоперевірка</p>
+                <h1 class="page-title">Перевірка знань</h1>
+                <p class="page-lead">Пройдіть короткі тести після лекцій. Результат з'явиться одразу після натискання кнопки перевірки.</p>
+            </div>
+            <aside class="page-stat"><strong>3</strong> набори питань</aside>
+        </section>
+
+        <section class="content-grid quiz-grid">
+            <article class="lecture-block test-question-block">
+                <div class="block-title">Тест 1: базові поняття</div>
+                <form id="quiz-form-1" data-result-id="quiz-result-1">
+                    <div id="quiz-container-1"></div>
+                    <button type="submit" class="submit-btn">Перевірити відповіді</button>
+                </form>
+                <div id="quiz-result-1"></div>
+            </article>
+            <article class="lecture-block test-question-block">
+                <div class="block-title">Тест 2: типи графів</div>
+                <form id="quiz-form-2" data-result-id="quiz-result-2">
+                    <div id="quiz-container-2"></div>
+                    <button type="submit" class="submit-btn">Перевірити відповіді</button>
+                </form>
+                <div id="quiz-result-2"></div>
+            </article>
+            <article class="lecture-block test-question-block">
+                <div class="block-title">Тест 3: подання графів</div>
+                <form id="quiz-form-3" data-result-id="quiz-result-3">
+                    <div id="quiz-container-3"></div>
+                    <button type="submit" class="submit-btn">Перевірити відповіді</button>
+                </form>
+                <div id="quiz-result-3"></div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__text">© 2026 | Graphly - навчальний редактор графів</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/test_lecture_data.js"></script>
+    <script src="../assets/js/test_lecture.js"></script>
+    <script src="../assets/js/quiz.js" defer></script>
+    <script>
+        loadQuestionsFromFile('lectures_pages/test_json/test1.json', 'quiz-container-1', 'quiz-form-1', 'quiz-result-1').then(() => initQuizForm('quiz-form-1'));
+        loadQuestionsFromFile('lectures_pages/test_json/test2.json', 'quiz-container-2', 'quiz-form-2', 'quiz-result-2').then(() => initQuizForm('quiz-form-2'));
+        loadQuestionsFromFile('lectures_pages/test_json/test3.json', 'quiz-container-3', 'quiz-form-3', 'quiz-result-3').then(() => initQuizForm('quiz-form-3'));
+    </script>
+</body>
+
+</html>

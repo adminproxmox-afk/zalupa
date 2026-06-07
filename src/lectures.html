@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - Лекції</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/platform.css">
+    <link rel="stylesheet" href="../assets/css/lecture.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="../index.html" class="nav__logo">
+                    <i class="ri-organization-chart"></i> Graphly
+                </a>
+                <div class="nav__actions">
+                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../index.html" class="nav__link">Головна</a></li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Матеріали<i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="lectures.html" class="dropdown__link"><i class="ri-book-open-line"></i> Лекції</a></li>
+                            <li><a href="practical_work.html" class="dropdown__link"><i class="ri-file-list-3-line"></i> Практичні роботи</a></li>
+                            <li><a href="assignments.html" class="dropdown__link"><i class="ri-file-code-line"></i> Завдання</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Інструменти <i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="graph_editor.html" class="dropdown__link"><i class="ri-pencil-ruler-line"></i> Редактор графів</a></li>
+                            <li><a href="algorithms.html" class="dropdown__link"><i class="ri-search-line"></i> Алгоритми</a></li>
+                            <li><a href="graph_visualization.html" class="dropdown__link"><i class="ri-eye-line"></i> Візуалізація графів</a></li>
+                            <li><a href="graph_analysis.html" class="dropdown__link"><i class="ri-bar-chart-box-line"></i> Аналіз графів</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Тестування знань <i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="quiz.html" class="dropdown__link"><i class="ri-question-line"></i> Перевірка знань</a></li>
+                            <li><a href="assessment.html" class="dropdown__link"><i class="ri-award-line"></i> Оцінювання</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="support.html" class="nav__link">Підтримка</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="lectures">
+            <p class="lectures__eyebrow">Курс з теорії графів</p>
+            <h1 class="lectures__title">Лекції</h1>
+            <p class="lectures__intro">
+                Матеріали з презентації зібрані у чотири логічні теми: від базових понять до алгоритмів пошуку найкоротших шляхів.
+            </p>
+
+            <div class="lectures__badge">
+                <span>4 лекції</span>
+                <span>5 практичних прикладів</span>
+                <span>розуміння алгоритмів</span>
+            </div>
+
+            <div class="lecture-controls">
+                <div class="lecture-search">
+                    <input id="lecture-search" type="search" placeholder="Пошук лекцій, ключових слів або тем" />
+                </div>
+                <div class="lecture-filter">
+                    <button class="active" data-category="all">Усі</button>
+                    <button data-category="favorite">Улюблені</button>
+                    <button data-category="basics">Основи</button>
+                    <button data-category="structure">Подання</button>
+                    <button data-category="trees">Дерева</button>
+                </div>
+            </div>
+
+            <div class="lectures__grid">
+                <a href="lectures_pages/lecture1.html" class="lecture-card" data-lecture-id="lecture1" data-category="basics">
+                    <div class="lecture-card-meta">
+                        <span class="lecture__number">01</span>
+                        <button class="favorite-toggle" aria-label="Додати до обраного"><i class="ri-heart-line"></i></button>
+                    </div>
+                    <h2 class="lecture-card-title">Основні поняття теорії графів</h2>
+                    <p class="lecture-card-text">Граф, вершина, ребро, степінь, петля, типи графів та приклад задачі Ейлера.</p>
+                </a>
+                <a href="lectures_pages/lecture2.html" class="lecture-card" data-lecture-id="lecture2" data-category="structure">
+                    <div class="lecture-card-meta">
+                        <span class="lecture__number">02</span>
+                        <button class="favorite-toggle" aria-label="Додати до обраного"><i class="ri-heart-line"></i></button>
+                    </div>
+                    <h2 class="lecture-card-title">Способи подання графів</h2>
+                    <p class="lecture-card-text">Матриця суміжності, список суміжності, список ребер та матриця інцидентності.</p>
+                </a>
+                <a href="lectures_pages/lecture3.html" class="lecture-card" data-lecture-id="lecture3" data-category="trees">
+                    <div class="lecture-card-meta">
+                        <span class="lecture__number">03</span>
+                        <button class="favorite-toggle" aria-label="Додати до обраного"><i class="ri-heart-line"></i></button>
+                    </div>
+                    <h2 class="lecture-card-title">Операції над графами і дерева</h2>
+                    <p class="lecture-card-text">Доповнення, підграфи, об'єднання, перетин, кільцева сума, дерева, Крускал і Прім.</p>
+                </a>
+                <a href="lectures_pages/lecture4.html" class="lecture-card" data-lecture-id="lecture4" data-category="trees">
+                    <div class="lecture-card-meta">
+                        <span class="lecture__number">04</span>
+                        <button class="favorite-toggle" aria-label="Додати до обраного"><i class="ri-heart-line"></i></button>
+                    </div>
+                    <h2 class="lecture-card-title">Алгоритм Дейкстри</h2>
+                    <p class="lecture-card-text">Покроковий пошук найкоротшого шляху у зваженому графі без від'ємних ребер.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__text">© 2026 | Graphly - навчальний редактор графів</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+</body>
+
+</html>

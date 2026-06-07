@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - Лекція 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/nav.css">
+    <link rel="stylesheet" href="../../assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/platform.css">
+    <link rel="stylesheet" href="../../assets/css/lecture_content.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="../../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <div class="nav__actions">
+                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../../index.html" class="nav__link">Головна</a></li>
+                    <li><a href="../lectures.html" class="nav__link">Лекції</a></li>
+                    <li><a href="../graph_editor.html" class="nav__link">Редактор графів</a></li>
+                    <li><a href="../quiz.html" class="nav__link">Тестування</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="lecture-container">
+        <article class="lecture-content">
+            <p class="lecture-kicker">Лекція 1</p>
+            <h1 class="lecture-title">Основні поняття теорії графів</h1>
+
+            <div class="lecture-summary">
+                <p class="summary-highlight">У цій лекції ви дізнаєтесь:</p>
+                <ul class="summary-list">
+                    <li>що таке граф, вершина та ребро;</li>
+                    <li>які бувають типи графів;</li>
+                    <li>як працюють степінь і петля.</li>
+                </ul>
+            </div>
+
+            <section class="lecture-section">
+                <h2 class="section-title">Що таке граф</h2>
+                <p>Граф моделює зв'язки між об'єктами. Об'єкти називають вершинами, а зв'язки між ними - ребрами.</p>
+            </section>
+
+            <div class="lecture-block definition">
+                <div class="block-title">Визначення</div>
+                <p>Граф позначають як G = (V, E), де V - непорожня множина вершин, а E - множина ребер або дуг між вершинами.</p>
+            </div>
+
+            <div class="lecture-block example">
+                <div class="block-title">Класичний приклад</div>
+                <p>Задача про Кенігсберзькі мости показує, як реальну ситуацію можна перетворити на граф: ділянки суші стають вершинами, а мости - ребрами.</p>
+                <div class="image-container">
+                    <img src="../../assets/image/png_11klas_2020_2021_Modul_01_0 - Copy 6.png" alt="Граф Кенігсберзьких мостів">
+                    <p class="image-caption">Графічне подання задачі Ейлера про мости.</p>
+                </div>
+            </div>
+
+            <section class="lecture-section">
+                <h2 class="section-title">Базові елементи</h2>
+                <ul class="lecture-list">
+                    <li><strong>Вершина</strong> - окремий об'єкт графа.</li>
+                    <li><strong>Ребро</strong> - зв'язок між двома вершинами.</li>
+                    <li><strong>Дуга</strong> - ребро з напрямком в орієнтованому графі.</li>
+                    <li><strong>Петля</strong> - ребро, початок і кінець якого збігаються.</li>
+                    <li><strong>Степінь вершини</strong> - кількість ребер, інцидентних цій вершині.</li>
+                </ul>
+            </section>
+
+            <div class="lecture-block definition">
+                <div class="block-title">Типи графів</div>
+                <p>Графи бувають орієнтовані й неорієнтовані, зважені й незважені, повні й неповні, прості, мультиграфи та псевдографи.</p>
+            </div>
+
+            <section class="lecture-section">
+                <h2 class="section-title">Важливі факти</h2>
+                <p>Сума степенів усіх вершин графа дорівнює подвоєній кількості ребер. Звідси випливає, що кількість вершин непарного степеня завжди парна.</p>
+            </section>
+
+            <div class="lecture-block question-block">
+                <div class="block-title">Питання для перевірки</div>
+                <ul class="questions-list">
+                    <li>З яких двох множин складається граф?</li>
+                    <li>Чим орієнтований граф відрізняється від неорієнтованого?</li>
+                    <li>Що таке петля та ізольована вершина?</li>
+                </ul>
+            </div>
+
+            <nav class="lecture-navigation">
+                <button class="nav-btn prev-lecture" onclick="location.href='../lectures.html'">До списку лекцій</button>
+                <button class="nav-btn test-lecture" onclick="location.href='../quiz.html'">Пройти тест</button>
+                <button class="nav-btn next-lecture" onclick="location.href='lecture2.html'">Наступна лекція</button>
+            </nav>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__text">© 2026 | Graphly - навчальний редактор графів</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js" defer></script>
+    <script src="../../assets/js/app.js" defer></script>
+</body>
+
+</html>

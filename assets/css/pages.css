@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+.page-shell {
+    width: min(1120px, calc(100% - 2rem));
+    margin: calc(var(--header-height) + 3rem) auto 3rem;
+    padding: 2rem;
+}
+
+.page-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+    gap: 2rem;
+    align-items: end;
+    padding: 2rem;
+    border: 1px solid rgba(35, 56, 88, 0.12);
+    border-radius: 24px;
+    background: var(--surface);
+    box-shadow: var(--shadow-medium);
+}
+
+.page-kicker {
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+}
+
+.page-title {
+    color: var(--text);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+}
+
+.page-lead {
+    color: var(--text);
+    line-height: 1.8;
+    max-width: 720px;
+}
+
+.page-stat {
+    background: rgba(79, 112, 255, 0.12);
+    color: var(--text);
+    border-radius: 18px;
+    padding: 1.5rem;
+}
+
+.page-stat strong {
+    color: var(--primary);
+}
+
+.page-stat strong {
+    display: block;
+    font-size: 2.6rem;
+    line-height: 1;
+    margin-bottom: 0.6rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.info-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.3rem;
+    box-shadow: var(--shadow-small);
+}
+
+.info-card i {
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    color: #fff;
+    background: var(--color-blue-500);
+    font-size: 1.2rem;
+}
+
+..info-card h2,
+.info-card h3 {
+    color: var(--text);
+    margin-bottom: 0.7rem;
+}
+
+.info-card p,
+.info-card li {
+    color: var(--text);
+    line-height: 1.75;
+}
+
+.info-card ul,
+.info-card ol {
+    padding-left: 1.2rem;
+}
+
+.wide-card {
+    grid-column: span 2;
+}
+
+.action-row {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.page-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: var(--color-blue-500);
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    font-weight: 700;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.page-button:hover {
+    background: var(--color-blue-600);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+    .page-hero,
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wide-card {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 560px) {
+    .page-shell {
+        width: min(100% - 1rem, 1120px);
+        padding: 1rem 0;
+    }
+
+    .page-hero {
+        padding: 1.25rem;
+    }
+}

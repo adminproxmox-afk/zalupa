@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - навчальний редактор графів</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/platform.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="index.html" class="nav__logo">
+                    <i class="ri-organization-chart"></i> Graphly
+                </a>
+                <div class="nav__actions">
+                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Головна</a></li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Матеріали<i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="src/lectures.html" class="dropdown__link"><i class="ri-book-open-line"></i> Лекції</a></li>
+                            <li><a href="src/practical_work.html" class="dropdown__link"><i class="ri-file-list-3-line"></i> Практичні роботи</a></li>
+                            <li><a href="src/assignments.html" class="dropdown__link"><i class="ri-file-code-line"></i> Завдання</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Інструменти <i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="src/graph_editor.html" class="dropdown__link"><i class="ri-pencil-ruler-line"></i> Редактор графів</a></li>
+                            <li><a href="src/algorithms.html" class="dropdown__link"><i class="ri-search-line"></i> Алгоритми</a></li>
+                            <li><a href="src/graph_visualization.html" class="dropdown__link"><i class="ri-eye-line"></i> Візуалізація графів</a></li>
+                            <li><a href="src/graph_analysis.html" class="dropdown__link"><i class="ri-bar-chart-box-line"></i> Аналіз графів</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Тестування знань <i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="src/quiz.html" class="dropdown__link"><i class="ri-question-line"></i> Перевірка знань</a></li>
+                            <li><a href="src/assessment.html" class="dropdown__link"><i class="ri-award-line"></i> Оцінювання</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="src/support.html" class="nav__link">Підтримка</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-enter">
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">Graphly — інтелектуальне навчання графів</span>
+                <h1>Інтерактивний курс з теорії графів, що поєднує лекції, задачі та практичний редактор</h1>
+                <p>Створюйте графи, вивчайте алгоритми та тренуйтеся з тестами в одному сучасному інтерфейсі. Graphly допомагає закріпити знання швидко і впевнено.</p>
+                <div class="hero-actions">
+                    <a href="src/lectures.html" class="btn-primary">Почати навчання</a>
+                    <a href="src/graph_editor.html" class="btn-secondary">Відкрити редактор графів</a>
+                </div>
+                <div class="stats">
+                    <article class="stat-card">
+                        <strong>4</strong>
+                        <span>лекції</span>
+                    </article>
+                    <article class="stat-card">
+                        <strong>5</strong>
+                        <span>алгоритмів</span>
+                    </article>
+                    <article class="stat-card">
+                        <strong>3</strong>
+                        <span>тестових набори</span>
+                    </article>
+                    <article class="stat-card">
+                        <strong>7</strong>
+                        <span>практичних завдань</span>
+                    </article>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <svg viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="heroGradient" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#4f70ff" />
+                                <stop offset="100%" stop-color="#8b7dff" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="140" cy="120" r="18" fill="#fff" opacity="0.85" />
+                        <circle cx="580" cy="100" r="24" fill="#fff" opacity="0.85" />
+                        <circle cx="240" cy="380" r="16" fill="url(#heroGradient)" />
+                        <circle cx="520" cy="320" r="20" fill="url(#heroGradient)" />
+                        <path d="M140 120C220 80 320 140 410 100C500 60 560 180 620 220" stroke="#94a7ff" stroke-width="3" stroke-linecap="round" />
+                        <path d="M240 380C310 320 420 340 510 300C600 260 660 340 700 360" stroke="#8b7dff" stroke-width="3" stroke-linecap="round" />
+                        <path d="M140 120L240 380" stroke="#4f70ff" stroke-width="3" stroke-dasharray="8 12" />
+                        <path d="M520 320L580 100" stroke="#6c63ff" stroke-width="3" stroke-dasharray="10 10" />
+                        <circle cx="360" cy="260" r="120" fill="rgba(79, 112, 255, 0.08)" />
+                        <circle cx="360" cy="260" r="92" fill="rgba(140, 93, 255, 0.08)" />
+                    </svg>
+                    <div class="hero-pill"><i class="ri-flashlight-line"></i> Інтерактивний графічний конструктор</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Переваги</span>
+                    <h2>Навіщо обирати Graphly</h2>
+                    <p>Прогресивна платформа для розуміння графів — від теорії до практики. Все в одному місці.</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <i class="ri-braces-line"></i>
+                        <h3>Інтерактивне навчання</h3>
+                        <p>Карти знань, лекції, чіткі кроки і практичні приклади допомагають швидко освоїти матеріал.</p>
+                    </article>
+                    <article class="feature-card">
+                        <i class="ri-stack-line"></i>
+                        <h3>Візуалізація алгоритмів</h3>
+                        <p>Покрокова анімація для BFS, DFS, Дейкстри, Крускала та Пріма.</p>
+                    </article>
+                    <article class="feature-card">
+                        <i class="ri-pencil-ruler-2-line"></i>
+                        <h3>Практичні завдання</h3>
+                        <p>Тести, задачі на конструювання графів і вправи, що перевіряють реальні уміння.</p>
+                    </article>
+                    <article class="feature-card">
+                        <i class="ri-command-line"></i>
+                        <h3>Редактор графів</h3>
+                        <p>Збереження, імпорт/експорт, власні властивості вершин і ребер у сучасному UI.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-modern">
+            <div class="container footer-inner">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                    <p class="footer-copy">Об'єднуємо теорію та практику для навчання графам у професійному стилі.</p>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="src/lectures.html">Лекції</a>
+                    <a class="footer-link" href="src/graph_editor.html">Редактор графів</a>
+                    <a class="footer-link" href="src/algorithms.html">Алгоритми</a>
+                    <a class="footer-link" href="src/quiz.html">Тести</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+</body>
+
+</html>

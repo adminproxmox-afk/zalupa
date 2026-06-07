@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - Аналіз графів</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/platform.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <div class="nav__actions">
+                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                    <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line nav__burger"></i><i class="ri-close-line nav__close"></i></div>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../index.html" class="nav__link">Головна</a></li>
+                    <li><a href="lectures.html" class="nav__link">Лекції</a></li>
+                    <li><a href="graph_editor.html" class="nav__link">Редактор графів</a></li>
+                    <li><a href="algorithms.html" class="nav__link">Алгоритми</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <section class="page-hero">
+            <div>
+                <p class="page-kicker">Обчислення</p>
+                <h1 class="page-title">Аналіз графів</h1>
+                <p class="page-lead">Редактор уже вміє рахувати базові характеристики графа: розмір, потужність, степені, матриці, списки, радіус, діаметр, центр і цикломатичне число.</p>
+            </div>
+            <aside class="page-stat"><strong>13</strong> функцій аналізу</aside>
+        </section>
+
+        <section class="content-grid">
+            <article class="info-card">
+                <i class="ri-dashboard-3-line"></i>
+                <h2>Структура</h2>
+                <p>Розмір, потужність і степені вершин допомагають швидко описати граф.</p>
+            </article>
+            <article class="info-card">
+                <i class="ri-table-line"></i>
+                <h2>Подання</h2>
+                <p>Матриця суміжності, список суміжності, список ребер і матриця інцидентності будуються автоматично.</p>
+            </article>
+            <article class="info-card">
+                <i class="ri-crosshair-2-line"></i>
+                <h2>Відстані</h2>
+                <p>Матриця відстаней, ексцентриситети, радіус, діаметр і центр показують геометрію графа.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer"><div class="footer__content"><p class="footer__text">© 2026 | Graphly - навчальний редактор графів</p></div></footer>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+</body>
+
+</html>

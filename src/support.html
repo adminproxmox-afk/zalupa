@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - Підтримка</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/platform.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <div class="nav__actions">
+                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                    <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line nav__burger"></i><i class="ri-close-line nav__close"></i></div>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../index.html" class="nav__link">Головна</a></li>
+                    <li><a href="lectures.html" class="nav__link">Лекції</a></li>
+                    <li><a href="graph_editor.html" class="nav__link">Редактор графів</a></li>
+                    <li><a href="quiz.html" class="nav__link">Тестування</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <section class="page-hero">
+            <div>
+                <p class="page-kicker">Допомога</p>
+                <h1 class="page-title">Підтримка</h1>
+                <p class="page-lead">Якщо під час роботи з редактором виникає помилка, варто перевірити тип графа, активний інструмент і наявність потрібних вершин або ваг.</p>
+            </div>
+            <aside class="page-stat"><strong>3</strong> кроки перевірки</aside>
+        </section>
+
+        <section class="content-grid">
+            <article class="info-card">
+                <i class="ri-cursor-line"></i>
+                <h2>1. Режим</h2>
+                <p>Переконайтеся, що вибрано правильний інструмент: вершина, ребро, напрямок, петля або вага.</p>
+            </article>
+            <article class="info-card">
+                <i class="ri-git-commit-line"></i>
+                <h2>2. Вершини</h2>
+                <p>Для ребра потрібно вибрати дві різні вершини. Для петлі достатньо однієї вершини.</p>
+            </article>
+            <article class="info-card">
+                <i class="ri-scales-line"></i>
+                <h2>3. Ваги</h2>
+                <p>Для алгоритму Дейкстри бажано створювати зважені ребра з додатними числами.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer"><div class="footer__content"><p class="footer__text">© 2026 | Graphly - навчальний редактор графів</p></div></footer>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+</body>
+
+</html>

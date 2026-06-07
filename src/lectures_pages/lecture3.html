@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - Лекція 3</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/nav.css">
+    <link rel="stylesheet" href="../../assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/platform.css">
+    <link rel="stylesheet" href="../../assets/css/lecture_content.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="../../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <div class="nav__actions">
+                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../../index.html" class="nav__link">Головна</a></li>
+                    <li><a href="../lectures.html" class="nav__link">Лекції</a></li>
+                    <li><a href="../graph_editor.html" class="nav__link">Редактор графів</a></li>
+                    <li><a href="../quiz.html" class="nav__link">Тестування</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="lecture-container">
+        <article class="lecture-content">
+            <p class="lecture-kicker">Лекція 3</p>
+            <h1 class="lecture-title">Операції над графами та дерева</h1>
+
+            <div class="lecture-summary">
+                <p class="summary-highlight">У цій лекції ви дізнаєтесь:</p>
+                <ul class="summary-list">
+                    <li>які операції можна виконувати над графами;</li>
+                    <li>що таке дерева та остовні дерева;</li>
+                    <li>як вибирати алгоритм для мінімального остова.</li>
+                </ul>
+            </div>
+
+            <section class="lecture-section">
+                <h2 class="section-title">Операції над графами</h2>
+                <p>Операції над графами дозволяють змінювати структуру графа або будувати новий граф із наявних.</p>
+            </section>
+
+            <div class="lecture-block definition">
+                <div class="block-title">Основні операції</div>
+                <ul class="lecture-list compact">
+                    <li><strong>Доповнення графа</strong> - граф з тими самими вершинами, але з ребрами, яких не було у вихідному графі.</li>
+                    <li><strong>Частковий граф</strong> - граф з тією самою множиною вершин і підмножиною ребер.</li>
+                    <li><strong>Підграф</strong> - граф, побудований на підмножині вершин і відповідних ребрах.</li>
+                    <li><strong>Об'єднання</strong> - граф, що містить усі вершини й ребра двох графів.</li>
+                    <li><strong>Перетин</strong> - граф зі спільних вершин і спільних ребер.</li>
+                    <li><strong>Кільцева сума</strong> - об'єднання без спільних ребер.</li>
+                </ul>
+            </div>
+
+            <section class="lecture-section">
+                <h2 class="section-title">Дерева</h2>
+                <p>Дерево - це зв'язний ациклічний граф. У дереві між будь-якими двома вершинами існує рівно один простий шлях.</p>
+            </section>
+
+            <div class="lecture-block example">
+                <div class="block-title">Остовне дерево</div>
+                <p>Остовне дерево графа має ті самі вершини, що й початковий граф, але містить лише частину ребер так, щоб не було циклів і граф залишався зв'язним.</p>
+            </div>
+
+            <section class="lecture-section">
+                <h2 class="section-title">Мінімальне остовне дерево</h2>
+                <p>Для зваженого графа часто потрібно знайти остовне дерево з мінімальною сумою ваг ребер.</p>
+                <ul class="lecture-list">
+                    <li><strong>Алгоритм Крускала</strong> сортує ребра за вагою та додає найменші ребра, якщо вони не утворюють цикл.</li>
+                    <li><strong>Алгоритм Пріма</strong> починає з однієї вершини й щоразу додає найменше ребро, яке з'єднує побудовану частину з новою вершиною.</li>
+                </ul>
+            </section>
+
+            <div class="lecture-block question-block">
+                <div class="block-title">Питання для перевірки</div>
+                <ul class="questions-list">
+                    <li>Що таке доповнення графа?</li>
+                    <li>Чому дерево не може містити цикл?</li>
+                    <li>У чому різниця між алгоритмами Крускала та Пріма?</li>
+                </ul>
+            </div>
+
+            <nav class="lecture-navigation">
+                <button class="nav-btn prev-lecture" onclick="location.href='lecture2.html'">Попередня лекція</button>
+                <button class="nav-btn test-lecture" onclick="location.href='../algorithms.html'">Алгоритми</button>
+                <button class="nav-btn next-lecture" onclick="location.href='lecture4.html'">Наступна лекція</button>
+            </nav>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__text">© 2026 | Graphly - навчальний редактор графів</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js" defer></script>
+    <script src="../../assets/js/app.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,472 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.workspace {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    background: #f9f9f9;
+    overflow: hidden;
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background: #ddd;
+    border-bottom: 2px solid #bbb;
+}
+
+.nav__logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: hsl(215, 83%, 53%);
+    font-size: 1.5rem;
+    margin-right: 20px;
+    font-weight: 600;
+}
+
+.nav__logo i {
+    margin-right: 8px;
+    font-weight: initial;
+    font-size: 1.7rem;
+    color: hsl(215, 83%, 53%);
+}
+
+.toolbar button {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.toolbar button:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.canvas-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #f8f9fa;
+}
+
+.grid {
+    width: 2000px;
+    /* Велике полотно для масштабування */
+    height: 2000px;
+    background-size: 50px 50px;
+    /* Розмір клітинки */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    transform-origin: top left;
+}
+
+.functions-panel {
+    flex: 1;
+    background: #f8f8f8;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #ddd;
+    max-width: 100%;
+}
+
+.search-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 450px;
+    width: 100%;
+}
+
+#search-input {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-btn {
+    width: 95%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+    .search-block {
+        flex-direction: row;
+        /* Горизонтальний вигляд для більших екранів */
+        gap: 15px;
+    }
+
+    #search-input {
+        width: 100%;
+    }
+
+    .search-btn {
+        max-width: 30%;
+        /* Обмеження ширини кнопки */
+    }
+}
+
+
+.dropdown {
+    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.dropdown #dropdown-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #e0e0e0;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.dropdown #dropdown-btn:hover {
+    background: #d0d0d0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown #dropdown-btn i {
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.dropdown-content {
+    display: none;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown.open .dropdown-content {
+    display: block;
+}
+
+.dropdown.open button i {
+    transform: rotate(180deg);
+}
+
+.execute-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background 0.3s, box-shadow 0.3s;
+    background: #007BFF;
+}
+
+.execute-btn:hover {
+    background: #0056b3;
+}
+
+.result {
+    margin-top: 8px;
+    padding: 8px;
+    background: #f4f4f4;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+#undirected-vertex-degree-input,
+#directed-vertex-degree-input,
+#undirected-start-node-input,
+#undirected-end-node-input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#undirected-vertex-degree-input::placeholder,
+#directed-vertex-degree-input::placeholder,
+#undirected-start-node-input::placeholder,
+#undirected-end-node-input::placeholder {
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+
+    #undirected-vertex-degree-input,
+    #directed-vertex-degree-input,
+    #undirected-start-node-input,
+    #undirected-end-node-input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .functions-panel {
+        padding: 10px;
+    }
+
+    .dropdown button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .execute-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+button.active {
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+}
+
+.toolbar button.active {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Загальні стилі для випадаючого меню */
+#graphType {
+    padding: 8px;
+    font-size: 16px;
+    /* border: 1px solid #ddd; */
+    border-radius: 4px;
+    background-color: #ddd;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Зміна стилів при наведенні */
+#graphType:hover {
+    background-color: rgb(239, 237, 237);
+}
+
+/* Адаптивні стилі для різних розмірів екрану */
+@media (max-width: 768px) {
+    #graphType {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    #graphType {
+        font-size: 12px;
+        padding: 4px;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Медіа-запити для мобільних пристроїв */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        /* Легше для мобільних */
+    }
+
+    .workspace {
+        flex-direction: column;
+        /* Інструменти нагорі, а canvas внизу */
+        padding: 5px;
+    }
+
+    .toolbar {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        /* Горизонтальна прокрутка */
+        white-space: nowrap;
+        /* Запобігає переносу кнопок */
+        gap: 8px;
+        width: 100%;
+        height: 80px;
+        /* Збільшена висота панелі */
+        padding: 10px;
+        border-bottom: 2px solid #ccc;
+        align-items: center;
+        /* Вирівнює кнопки по центру */
+    }
+
+    .toolbar button {
+        flex: 0 0 auto;
+        /* Запобігає стисненню кнопок */
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .canvas-container {
+        flex-grow: 1;
+        height: calc(100vh - 60px);
+        /* Забираємо висоту тулбара */
+    }
+
+    .functions-panel {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .dropdown #dropdown-btn {
+        font-size: 14px;
+        /* Зменшуємо розмір шрифту для мобільних */
+    }
+
+    .grid {
+        background-size: 30px 30px;
+        /* Зменшуємо сітку для мобільних */
+    }
+}
+
+@media (max-width: 480px) {
+    .toolbar button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .grid {
+        background-size: 20px 20px;
+        /* Ще менший розмір сітки */
+    }
+
+    .dropdown #dropdown-btn {
+        padding: 8px;
+        /* Зменшуємо padding для кнопки */
+    }
+
+    .toolbar {
+        height: auto;
+    }
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+/* 
+
+.vertex:hover {
+    background-color: red; 
+}
+    .vertex {
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+}
+.vertex-label, .edge-label {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+.vertex-label {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+
+.vertex:hover {
+    background-color: red; 
+}
+
+.edge {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: black;
+    transform-origin: top left;
+}
+
+ */

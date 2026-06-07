@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - Лекція 4</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/nav.css">
+    <link rel="stylesheet" href="../../assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/platform.css">
+    <link rel="stylesheet" href="../../assets/css/lecture_content.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="../../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <div class="nav__actions">
+                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../../index.html" class="nav__link">Головна</a></li>
+                    <li><a href="../lectures.html" class="nav__link">Лекції</a></li>
+                    <li><a href="../graph_editor.html" class="nav__link">Редактор графів</a></li>
+                    <li><a href="../quiz.html" class="nav__link">Тестування</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="lecture-container">
+        <article class="lecture-content">
+            <p class="lecture-kicker">Лекція 4</p>
+            <h1 class="lecture-title">Алгоритм Дейкстри</h1>
+
+            <div class="lecture-summary">
+                <p class="summary-highlight">У цій лекції ви дізнаєтесь:</p>
+                <ul class="summary-list">
+                    <li>як працює алгоритм пошуку найкоротшого шляху;</li>
+                    <li>які дані потрібно зберігати на кожному кроці;</li>
+                    <li>чому цей алгоритм не підходить для від'ємних ваг.</li>
+                </ul>
+            </div>
+
+            <section class="lecture-section">
+                <h2 class="section-title">Призначення алгоритму</h2>
+                <p>Алгоритм Дейкстри знаходить найкоротші відстані від однієї початкової вершини до інших вершин зваженого графа. Він працює для графів без ребер від'ємної ваги.</p>
+            </section>
+
+            <div class="lecture-block definition">
+                <div class="block-title">Ідея</div>
+                <p>Кожній вершині призначається мітка відстані. На кожному кроці обирається невідвідана вершина з найменшою поточною відстанню, після чого оновлюються відстані до її сусідів.</p>
+            </div>
+
+            <section class="lecture-section">
+                <h2 class="section-title">Кроки алгоритму</h2>
+                <ol class="lecture-list ordered">
+                    <li>Початковій вершині надати відстань 0, іншим вершинам - нескінченність.</li>
+                    <li>Позначити всі вершини як невідвідані.</li>
+                    <li>Обрати невідвідану вершину з мінімальною міткою.</li>
+                    <li>Для кожного сусіда перевірити, чи шлях через поточну вершину коротший.</li>
+                    <li>Позначити поточну вершину як відвідану.</li>
+                    <li>Повторювати, доки не буде знайдено шлях або не залишиться доступних вершин.</li>
+                </ol>
+            </section>
+
+            <div class="lecture-block example">
+                <div class="block-title">Приклад результату</div>
+                <p>Якщо найкоротший шлях з вершини 1 до вершини 5 проходить через вершини 1 - 3 - 6 - 5, то його вага дорівнює сумі ваг ребер цього маршруту.</p>
+            </div>
+
+            <section class="lecture-section">
+                <h2 class="section-title">Зв'язок із редактором</h2>
+                <p>У редакторі графів можна створити зважений граф, обрати початкову й кінцеву вершини та запустити обчислення найкоротшого шляху.</p>
+            </section>
+
+            <div class="lecture-block question-block">
+                <div class="block-title">Питання для перевірки</div>
+                <ul class="questions-list">
+                    <li>Чому алгоритм Дейкстри не використовують для ребер з від'ємною вагою?</li>
+                    <li>Що означає мітка вершини?</li>
+                    <li>Як відновити сам шлях після обчислення відстаней?</li>
+                </ul>
+            </div>
+
+            <nav class="lecture-navigation">
+                <button class="nav-btn prev-lecture" onclick="location.href='lecture3.html'">Попередня лекція</button>
+                <button class="nav-btn test-lecture" onclick="location.href='../graph_editor.html'">Спробувати в редакторі</button>
+                <button class="nav-btn next-lecture" onclick="location.href='../lectures.html'">До списку лекцій</button>
+            </nav>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__text">© 2026 | Graphly - навчальний редактор графів</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js" defer></script>
+    <script src="../../assets/js/app.js" defer></script>
+</body>
+
+</html>

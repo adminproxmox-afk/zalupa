@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - Практичні роботи</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/platform.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <div class="nav__actions">
+                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                    <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line nav__burger"></i><i class="ri-close-line nav__close"></i></div>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../index.html" class="nav__link">Головна</a></li>
+                    <li><a href="lectures.html" class="nav__link">Лекції</a></li>
+                    <li><a href="graph_editor.html" class="nav__link">Редактор графів</a></li>
+                    <li><a href="quiz.html" class="nav__link">Тестування</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <section class="page-hero">
+            <div>
+                <p class="page-kicker">Практика</p>
+                <h1 class="page-title">Практичні роботи</h1>
+                <p class="page-lead">Завдання побудовані так, щоб після кожної лекції студент міг одразу перевірити поняття у редакторі графів.</p>
+                <div class="action-row">
+                    <a href="graph_editor.html" class="page-button"><i class="ri-pencil-ruler-line"></i> Відкрити редактор</a>
+                    <a href="lectures.html" class="page-button"><i class="ri-book-open-line"></i> Повторити лекції</a>
+                </div>
+            </div>
+            <aside class="page-stat"><strong>4</strong> роботи відповідають темам курсу</aside>
+        </section>
+
+        <section class="content-grid">
+            <article class="info-card">
+                <i class="ri-node-tree"></i>
+                <h2>Робота 1</h2>
+                <p>Побудуйте простий, повний, орієнтований і зважений граф. Визначте степені вершин.</p>
+            </article>
+            <article class="info-card">
+                <i class="ri-table-line"></i>
+                <h2>Робота 2</h2>
+                <p>Для створеного графа складіть матрицю суміжності, список суміжності, список ребер і матрицю інцидентності.</p>
+            </article>
+            <article class="info-card">
+                <i class="ri-git-merge-line"></i>
+                <h2>Робота 3</h2>
+                <p>Порівняйте два графи: знайдіть об'єднання, перетин, доповнення та приклад підграфа.</p>
+            </article>
+            <article class="info-card wide-card">
+                <i class="ri-route-line"></i>
+                <h2>Робота 4</h2>
+                <p>Створіть зважений граф, знайдіть найкоротший шлях алгоритмом Дейкстри та поясніть отриманий маршрут.</p>
+            </article>
+            <article class="info-card">
+                <i class="ri-check-double-line"></i>
+                <h2>Результат</h2>
+                <p>Після виконання робіт студент має вміти переходити від теорії до таблиць, схем і алгоритмів.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer"><div class="footer__content"><p class="footer__text">© 2026 | Graphly - навчальний редактор графів</p></div></footer>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+</body>
+
+</html>
