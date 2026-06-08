@@ -108,6 +108,7 @@ function initKeyboardShortcuts() {
       event.preventDefault();
       if (typeof window.exportGraph === 'function') {
         window.exportGraph();
+        showToast('Граф збережено.', 'success');
       } else {
         showToast('Збереження доступне у редакторі графів.', 'default');
       }

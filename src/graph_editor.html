@@ -46,7 +46,7 @@
             <button title="Переміщення" onclick="toggleMoveMode(this)">
                 <i class="fas fa-hand-paper"></i>
             </button>
-            <button title="Зберегти" class="save-button" onclick="toggleSelectionMode(this)">
+            <button title="Зберегти" class="save-button" onclick="exportGraph()">
                 <i class="fas fa-save"></i>
             </button>
             <button title="Очистити" onclick="deleteSelected()">
@@ -68,7 +68,7 @@
             <svg id="canvas" width="2000" height="2000">
                 <g id="canvas-group"></g>
             </svg>
-            <!-- <div class="grid" id="grid"></div> -->
+            <div class="grid" id="grid"></div>
         </div>
     </div>
     <div class="functions-panel">
@@ -377,6 +377,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/1.1/canvg.min.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="../assets/js/script.js" defer></script>
     <script src="../assets/js/d3.js" defer></script>
     <script src="../assets/js/app.js" defer></script>
 

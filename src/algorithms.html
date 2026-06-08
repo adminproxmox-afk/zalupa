@@ -18,12 +18,7 @@
         <nav class="nav container">
             <div class="nav__data">
                 <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
-                <div class="nav__actions">
-                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
-                        <i class="ri-moon-line"></i>
-                    </button>
-                    <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line nav__burger"></i><i class="ri-close-line nav__close"></i></div>
-                </div>
+                <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line nav__burger"></i><i class="ri-close-line nav__close"></i></div>
             </div>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -35,6 +30,10 @@
             </div>
         </nav>
     </header>
+
+    <button id="theme-toggle" class="theme-switcher theme-float" type="button" aria-label="Увімкнути темну тему">
+        <i class="ri-moon-line"></i>
+    </button>
 
     <main class="page-shell">
         <section class="page-hero">
@@ -66,7 +65,21 @@
         </section>
     </main>
 
-    <footer class="footer"><div class="footer__content"><p class="footer__text">© 2026 | Graphly - навчальний редактор графів</p></div></footer>
+    <footer class="footer-modern">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <p class="footer-copy">Об'єднуємо теорію та практику для навчання графам у професійному стилі.</p>
+            </div>
+            <div class="footer-links">
+                <a class="footer-link" href="lectures.html">Лекції</a>
+                <a class="footer-link" href="graph_editor.html">Редактор графів</a>
+                <a class="footer-link" href="algorithms.html">Алгоритми</a>
+                <a class="footer-link" href="quiz.html">Тести</a>
+            </div>
+        </div>
+    </footer>
+
     <script src="../assets/js/main.js" defer></script>
     <script src="../assets/js/app.js" defer></script>
 </body>

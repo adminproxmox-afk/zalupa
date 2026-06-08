@@ -6,10 +6,10 @@
   --header-height: 3.5rem;
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --black-color: #fff;
-  --black-color-light: hsl(0, 0%, 99%);
-  --black-color-lighten: hsl(0, 0%, 99%);
-  --white-color: hsl(220, 24%, 12%);
+  --black-color: hsl(220, 24%, 12%);
+  --black-color-light: hsl(220, 20%, 18%);
+  --black-color-lighten: hsl(220, 16%, 24%);
+  --white-color: #fff;
   --body-color: hsl(0, 0%, 100%);
   --color-white-100: hsl(206, 0%, 100%);
   --color-white-200: hsl(206, 0%, 90%);
@@ -104,13 +104,14 @@ a {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
-  box-shadow: 0 20px 48px rgba(15, 64, 112, 0.08);
+  box-shadow: 0 2px 12px rgba(15, 64, 112, 0.08);
   z-index: var(--z-fixed);
 }
 
 /*=============== NAV ===============*/
 .nav {
   height: var(--header-height);
+  padding: 0.5rem 0;
 }
 .nav li a:hover {
   color: var(--color-blue-600);
@@ -147,19 +148,6 @@ a {
 .nav__logo i {
   font-weight: initial;
   font-size: 1.7rem;
-}
-
-.nav__data {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav__actions {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
 }
 
 .nav__toggle {
@@ -268,10 +256,10 @@ a {
   transition: transform .4s;
 }
 
-.dropdown__link, 
+.dropdown__link,
 .dropdown__sublink {
   padding: 1.25rem 1.25rem 1.25rem 2.5rem;
-  color: var(--white-color);
+  color: var(--color-black-400);
   background-color: var(--color-white-100);
   display: flex;
   align-items: center;
@@ -280,15 +268,16 @@ a {
   transition: background-color .3s;
 }
 
-.dropdown__link i, 
+.dropdown__link i,
 .dropdown__sublink i {
   font-size: 1.25rem;
   font-weight: initial;
 }
 
-.dropdown__link:hover, 
+.dropdown__link:hover,
 .dropdown__sublink:hover {
   background-color: var(--color-blue-100);
+  color: var(--color-blue-600);
 }
 
 .dropdown__menu, 
@@ -317,6 +306,11 @@ a {
 
 .dropdown__sublink {
   background-color: var(--color-white-200);
+}
+
+.dropdown__sublink:hover {
+  background-color: var(--color-blue-100);
+  color: var(--color-blue-600);
 }
 
 /*=============== BREAKPOINTS ===============*/
@@ -416,10 +410,10 @@ a {
 }
 
 main {
-    flex-grow: 1; /* Дозволяє основному вмісту заповнювати доступну висоту */
+    flex-grow: 1;
     display: block;
-    padding: 2rem;
-    margin-top: calc(var(--header-height) + 1rem);
+    padding: 1rem 2rem;
+    margin-top: calc(var(--header-height) + 0.5rem);
   }
   
   .intro {
@@ -628,26 +622,25 @@ main {
   }
   
 /*=============== FOOTER ===============*/
-/*=============== FOOTER ===============*/
 .footer {
     background-color: var(--color-black-400);
     color: var(--color-white-200);
     text-align: center;
-    padding: 1.2rem 0;
+    padding: 1.5rem 0;
     font-size: var(--normal-font-size);
     font-weight: var(--font-regular);
     box-shadow: var(--shadow-small);
-    margin-top: auto; /* Залишає футер внизу, навіть якщо контент не заповнює всю сторінку */
+    margin-top: auto;
   }
-  
+
   .footer__content {
     max-width: 1120px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
-  
+
   .footer__text {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0;
   }
   
   .footer__link {

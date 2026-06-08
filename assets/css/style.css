@@ -296,7 +296,6 @@ button.active {
 #graphType {
     padding: 8px;
     font-size: 16px;
-    /* border: 1px solid #ddd; */
     border-radius: 4px;
     background-color: #ddd;
     color: #333;
@@ -421,52 +420,3 @@ select,
 textarea {
     font-family: inherit;
 }
-
-/* 
-
-.vertex:hover {
-    background-color: red; 
-}
-    .vertex {
-    width: 30px;
-    height: 30px;
-    background-color: #007bff;
-    border-radius: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: white;
-    font-size: 14px;
-}
-.vertex-label, .edge-label {
-    font-size: 15px;
-    font-weight: bold;
-    color: black;
-}
-.vertex-label {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    font-weight: bold;
-    color: black;
-}
-
-.vertex:hover {
-    background-color: red; 
-}
-
-.edge {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background-color: black;
-    transform-origin: top left;
-}
-
- */

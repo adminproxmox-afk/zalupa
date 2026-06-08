@@ -21,14 +21,9 @@
                 <a href="../index.html" class="nav__logo">
                     <i class="ri-organization-chart"></i> Graphly
                 </a>
-                <div class="nav__actions">
-                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
-                        <i class="ri-moon-line"></i>
-                    </button>
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="ri-menu-line nav__burger"></i>
-                        <i class="ri-close-line nav__close"></i>
-                    </div>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
                 </div>
             </div>
             <div class="nav__menu" id="nav-menu">
@@ -64,18 +59,22 @@
         </nav>
     </header>
 
+    <button id="theme-toggle" class="theme-switcher theme-float" type="button" aria-label="Увімкнути темну тему">
+        <i class="ri-moon-line"></i>
+    </button>
+
     <main class="main">
         <section class="lectures">
-            <p class="lectures__eyebrow">Курс з теорії графів</p>
+            <span class="lectures__eyebrow">Курс з теорії графів</span>
             <h1 class="lectures__title">Лекції</h1>
             <p class="lectures__intro">
                 Матеріали з презентації зібрані у чотири логічні теми: від базових понять до алгоритмів пошуку найкоротших шляхів.
             </p>
 
             <div class="lectures__badge">
-                <span>4 лекції</span>
-                <span>5 практичних прикладів</span>
-                <span>розуміння алгоритмів</span>
+                <span>📚 4 лекції</span>
+                <span>💡 5 практичних прикладів</span>
+                <span>🎯 Розуміння алгоритмів</span>
             </div>
 
             <div class="lecture-controls">
@@ -128,14 +127,24 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer__content">
-            <p class="footer__text">© 2026 | Graphly - навчальний редактор графів</p>
+    <footer class="footer-modern">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <p class="footer-copy">Об'єднуємо теорію та практику для навчання графам у професійному стилі.</p>
+            </div>
+            <div class="footer-links">
+                <a class="footer-link" href="lectures.html">Лекції</a>
+                <a class="footer-link" href="graph_editor.html">Редактор графів</a>
+                <a class="footer-link" href="algorithms.html">Алгоритми</a>
+                <a class="footer-link" href="quiz.html">Тести</a>
+            </div>
         </div>
     </footer>
 
     <script src="../assets/js/main.js" defer></script>
     <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/lectures.js" defer></script>
 </body>
 
 </html>
