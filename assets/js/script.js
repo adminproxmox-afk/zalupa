@@ -220,10 +220,9 @@ function deleteSelected() {
     // Скидання лічильників для вершин
     vertexCount = 1;
 
-    // Вимкнення режимів додавання вершин і ребер
-    vertexMode = false;
-    edgeMode = false;
-    
+    // Скидання лічильника ребер
+    edgeCount = 1;
+
     // Зміна стилю кнопок для скидання активного стану
     document.querySelectorAll(".active").forEach(button => {
         button.classList.remove("active");

@@ -68,13 +68,13 @@
             <span class="lectures__eyebrow">Курс з теорії графів</span>
             <h1 class="lectures__title">Лекції</h1>
             <p class="lectures__intro">
-                Матеріали з презентації зібрані у чотири логічні теми: від базових понять до алгоритмів пошуку найкоротших шляхів.
+                Матеріали з презентацій зібрані у п'ять логічних тем: від базових понять до алгоритму Дейкстри. У кожної лекції є окрема презентація в папці <code>лекції</code>.
             </p>
 
             <div class="lectures__badge">
-                <span>📚 4 лекції</span>
-                <span>💡 5 практичних прикладів</span>
-                <span>🎯 Розуміння алгоритмів</span>
+                <span>📚 5 лекцій</span>
+                <span>🖼️ 5 презентацій</span>
+                <span>🎯 3 набори тестів</span>
             </div>
 
             <div class="lecture-controls">
@@ -87,6 +87,8 @@
                     <button data-category="basics">Основи</button>
                     <button data-category="structure">Подання</button>
                     <button data-category="trees">Дерева</button>
+                    <button data-category="directed">Орієнтовані</button>
+                    <button data-category="algorithms">Алгоритми</button>
                 </div>
             </div>
 
@@ -115,14 +117,28 @@
                     <h2 class="lecture-card-title">Операції над графами і дерева</h2>
                     <p class="lecture-card-text">Доповнення, підграфи, об'єднання, перетин, кільцева сума, дерева, Крускал і Прім.</p>
                 </a>
-                <a href="lectures_pages/lecture4.html" class="lecture-card" data-lecture-id="lecture4" data-category="trees">
+                <a href="lectures_pages/lecture4.html" class="lecture-card" data-lecture-id="lecture4" data-category="directed">
                     <div class="lecture-card-meta">
                         <span class="lecture__number">04</span>
+                        <button class="favorite-toggle" aria-label="Додати до обраного"><i class="ri-heart-line"></i></button>
+                    </div>
+                    <h2 class="lecture-card-title">Орієнтовані графи</h2>
+                    <p class="lecture-card-text">Напрямлені ребра, півстепені вершин, матриця суміжності та матриця інцидентності для орграфів.</p>
+                </a>
+                <a href="lectures_pages/lecture5.html" class="lecture-card" data-lecture-id="lecture5" data-category="algorithms">
+                    <div class="lecture-card-meta">
+                        <span class="lecture__number">05</span>
                         <button class="favorite-toggle" aria-label="Додати до обраного"><i class="ri-heart-line"></i></button>
                     </div>
                     <h2 class="lecture-card-title">Алгоритм Дейкстри</h2>
                     <p class="lecture-card-text">Покроковий пошук найкоротшого шляху у зваженому графі без від'ємних ребер.</p>
                 </a>
+            </div>
+
+            <div class="lecture-empty" id="lecture-empty" hidden>
+                <i class="ri-search-eye-line"></i>
+                <h3>Нічого не знайдено</h3>
+                <p>Спробуйте інший запит або змініть фільтр, щоб побачити більше матеріалів.</p>
             </div>
         </section>
     </main>

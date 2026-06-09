@@ -18,69 +18,82 @@
     <header class="header">
         <nav class="nav container">
             <div class="nav__data">
-                <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
-                <div class="nav__actions">
-                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
-                        <i class="ri-moon-line"></i>
-                    </button>
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="ri-menu-line nav__burger"></i>
-                        <i class="ri-close-line nav__close"></i>
-                    </div>
+                <a href="../index.html" class="nav__logo">
+                    <i class="ri-organization-chart"></i> Graphly
+                </a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
                 </div>
             </div>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li><a href="../index.html" class="nav__link">Головна</a></li>
-                    <li><a href="lectures.html" class="nav__link">Лекції</a></li>
-                    <li><a href="graph_editor.html" class="nav__link">Редактор графів</a></li>
-                    <li><a href="assessment.html" class="nav__link">Оцінювання</a></li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Матеріали<i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="lectures.html" class="dropdown__link"><i class="ri-book-open-line"></i> Лекції</a></li>
+                            <li><a href="practical_work.html" class="dropdown__link"><i class="ri-file-list-3-line"></i> Практичні роботи</a></li>
+                            <li><a href="assignments.html" class="dropdown__link"><i class="ri-file-code-line"></i> Завдання</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Інструменти <i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="graph_editor.html" class="dropdown__link"><i class="ri-pencil-ruler-line"></i> Редактор графів</a></li>
+                            <li><a href="algorithms.html" class="dropdown__link"><i class="ri-search-line"></i> Алгоритми</a></li>
+                            <li><a href="graph_visualization.html" class="dropdown__link"><i class="ri-eye-line"></i> Візуалізація графів</a></li>
+                            <li><a href="graph_analysis.html" class="dropdown__link"><i class="ri-bar-chart-box-line"></i> Аналіз графів</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Тестування знань <i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="quiz.html" class="dropdown__link"><i class="ri-question-line"></i> Перевірка знань</a></li>
+                            <li><a href="assessment.html" class="dropdown__link"><i class="ri-award-line"></i> Оцінювання</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="support.html" class="nav__link">Підтримка</a></li>
                 </ul>
             </div>
         </nav>
     </header>
+
+    <button id="theme-toggle" class="theme-switcher theme-float" type="button" aria-label="Увімкнути темну тему">
+        <i class="ri-moon-line"></i>
+    </button>
 
     <main class="page-shell quiz-page">
         <section class="page-hero">
             <div>
                 <p class="page-kicker">Самоперевірка</p>
                 <h1 class="page-title">Перевірка знань</h1>
-                <p class="page-lead">Пройдіть короткі тести після лекцій. Результат з'явиться одразу після натискання кнопки перевірки.</p>
+                <p class="page-lead">Оберіть тематичний блок, запустіть тест і одразу подивіться результат. Щоб додати новий тест у майбутньому, достатньо розширити каталог блоків і підключити JSON з питаннями.</p>
             </div>
-            <aside class="page-stat"><strong>3</strong> набори питань</aside>
+            <aside class="page-stat"><strong>3</strong> тематичні блоки</aside>
         </section>
 
-        <section class="content-grid quiz-grid">
-            <article class="lecture-block test-question-block">
-                <div class="block-title">Тест 1: базові поняття</div>
-                <form id="quiz-form-1" data-result-id="quiz-result-1">
-                    <div id="quiz-container-1"></div>
-                    <button type="submit" class="submit-btn">Перевірити відповіді</button>
-                </form>
-                <div id="quiz-result-1"></div>
-            </article>
-            <article class="lecture-block test-question-block">
-                <div class="block-title">Тест 2: типи графів</div>
-                <form id="quiz-form-2" data-result-id="quiz-result-2">
-                    <div id="quiz-container-2"></div>
-                    <button type="submit" class="submit-btn">Перевірити відповіді</button>
-                </form>
-                <div id="quiz-result-2"></div>
-            </article>
-            <article class="lecture-block test-question-block">
-                <div class="block-title">Тест 3: подання графів</div>
-                <form id="quiz-form-3" data-result-id="quiz-result-3">
-                    <div id="quiz-container-3"></div>
-                    <button type="submit" class="submit-btn">Перевірити відповіді</button>
-                </form>
-                <div id="quiz-result-3"></div>
+        <section class="quiz-library" id="quiz-library" aria-label="Блоки тестів"></section>
+
+        <section class="quiz-stage" id="quiz-stage">
+            <article class="lecture-block quiz-placeholder">
+                <div class="block-title">Оберіть блок</div>
+                <p>Натисніть на будь-яку картку вище, щоб відкрити тестовий блок і почати перевірку.</p>
             </article>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer__content">
-            <p class="footer__text">© 2026 | Graphly - навчальний редактор графів</p>
+    <footer class="footer-modern">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <p class="footer-copy">Об’єднуємо теорію та практику для навчання графам у професійному стилі.</p>
+            </div>
+            <div class="footer-links">
+                <a class="footer-link" href="lectures.html">Лекції</a>
+                <a class="footer-link" href="graph_editor.html">Редактор графів</a>
+                <a class="footer-link" href="algorithms.html">Алгоритми</a>
+            </div>
         </div>
     </footer>
 
@@ -89,11 +102,6 @@
     <script src="../assets/js/test_lecture_data.js"></script>
     <script src="../assets/js/test_lecture.js"></script>
     <script src="../assets/js/quiz.js" defer></script>
-    <script>
-        loadQuestionsFromFile('lectures_pages/test_json/test1.json', 'quiz-container-1', 'quiz-form-1', 'quiz-result-1').then(() => initQuizForm('quiz-form-1'));
-        loadQuestionsFromFile('lectures_pages/test_json/test2.json', 'quiz-container-2', 'quiz-form-2', 'quiz-result-2').then(() => initQuizForm('quiz-form-2'));
-        loadQuestionsFromFile('lectures_pages/test_json/test3.json', 'quiz-container-3', 'quiz-form-3', 'quiz-result-3').then(() => initQuizForm('quiz-form-3'));
-    </script>
 </body>
 
 </html>

@@ -28,7 +28,26 @@ document.addEventListener("DOMContentLoaded", function () {
     updateToolbar();
     drawGrid();
     blockButtons();
+    initializeSVGMarkers();
 });
+
+// Ініціалізація SVG маркерів один раз
+function initializeSVGMarkers() {
+    const defs = canvasGroup.append("defs");
+
+    // Створюємо arrowhead маркер один раз
+    defs.append("marker")
+        .attr("id", "arrowhead")
+        .attr("viewBox", "0 0 10 10")
+        .attr("refX", 8)
+        .attr("refY", 5)
+        .attr("markerWidth", 6)
+        .attr("markerHeight", 6)
+        .attr("orient", "auto")
+        .append("path")
+        .attr("d", "M0,0 L10,5 L0,10 Z")
+        .attr("fill", "black");
+}
 
 class Graph {
     constructor() {
@@ -210,12 +229,6 @@ function createDirectedEdge(v1, v2) {
     const unitX = dx / length, unitY = dy / length;
     const adjustedX1 = x1 + unitX * offset, adjustedY1 = y1 + unitY * offset;
     const adjustedX2 = x2 - unitX * (offset + arrowOffset), adjustedY2 = y2 - unitY * (offset + arrowOffset);
-
-    canvasGroup.append("defs").append("marker")
-        .attr("id", "arrowhead").attr("viewBox", "0 0 10 10")
-        .attr("refX", 8).attr("refY", 5).attr("markerWidth", 6)
-        .attr("markerHeight", 6).attr("orient", "auto")
-        .append("path").attr("d", "M0,0 L10,5 L0,10 Z").attr("fill", "black");
 
     canvasGroup.append("line")
         .attr("x1", adjustedX1).attr("y1", adjustedY1)
@@ -1690,3 +1703,18 @@ function searchFunction() {
         }
     });
 }
+
+// Експорт функцій у глобальну область видимості для використання в HTML
+window.exportGraph = function() {
+    if (modes.save) {
+        showToast('Виділіть область графа для збереження', 'default');
+    } else {
+        modes.save = true;
+        resetOtherModes(["save"]);
+        const saveButton = document.querySelector('.save-button');
+        if (saveButton) {
+            saveButton.classList.add('active');
+        }
+        showToast('Виділіть область графа мишею для збереження', 'default');
+    }
+};

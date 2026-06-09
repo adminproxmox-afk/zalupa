@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - Алгоритм Дейкстри</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/nav.css">
+    <link rel="stylesheet" href="../../assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/platform.css">
+    <link rel="stylesheet" href="../../assets/css/lecture_content.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="../../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <div class="nav__actions">
+                    <button id="theme-toggle" class="theme-switcher" type="button" aria-label="Увімкнути темну тему">
+                        <i class="ri-moon-line"></i>
+                    </button>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../../index.html" class="nav__link">Головна</a></li>
+                    <li><a href="../lectures.html" class="nav__link">Лекції</a></li>
+                    <li><a href="../graph_editor.html" class="nav__link">Редактор графів</a></li>
+                    <li><a href="../quiz.html" class="nav__link">Тестування</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="lecture-container">
+        <article class="lecture-content">
+            <p class="lecture-kicker">Лекція 5</p>
+            <h1 class="lecture-title">Алгоритм Дейкстри</h1>
+
+            <div class="lecture-summary">
+                <p class="summary-highlight">Після цієї лекції ви зрозумієте:</p>
+                <ul class="summary-list">
+                    <li>як працює пошук найкоротшого шляху у зваженому графі;</li>
+                    <li>чому алгоритм не підходить для ребер з від'ємною вагою;</li>
+                    <li>як відновити сам маршрут після обчислення відстаней.</li>
+                </ul>
+            </div>
+
+            <section class="lecture-section">
+                <h2 class="section-title">Коли використовують Дейкстру</h2>
+                <p>Алгоритм Дейкстри знаходить найкоротші відстані від однієї стартової вершини до всіх інших вершин зваженого графа. Він працює коректно лише тоді, коли всі ваги ребер невід'ємні.</p>
+            </section>
+
+            <div class="lecture-block definition">
+                <div class="block-title">Ідея алгоритму</div>
+                <p>На кожному кроці ми обираємо невідвідану вершину з найменшою поточною міткою, після чого намагаємося покращити мітки її сусідів. Коли вершина обрана як мінімальна, її відстань вже вважається остаточною.</p>
+            </div>
+
+            <section class="lecture-section">
+                <h2 class="section-title">Основні кроки</h2>
+                <ol class="lecture-list ordered">
+                    <li>Початковій вершині присвоюють відстань 0, усім іншим - нескінченність.</li>
+                    <li>Позначають усі вершини як невідвідані.</li>
+                    <li>Обирають невідвідану вершину з мінімальною міткою.</li>
+                    <li>Оновлюють відстані до всіх її сусідів.</li>
+                    <li>Повторюють, доки не будуть опрацьовані всі вершини.</li>
+                </ol>
+            </section>
+
+            <div class="lecture-block example">
+                <div class="block-title">Що показано в презентації</div>
+                <p>У слайдах є покроковий приклад для мережі з шести вершин, а також фрагмент реалізації на C++. Наприкінці демонструється відновлення самого шляху, а не лише значення відстані.</p>
+            </div>
+
+            <div class="image-container lecture-media">
+                <img src="../../assets/images/lectures/lecture5-dijkstra.png" alt="Граф для алгоритму Дейкстри з презентації">
+                <p class="image-caption">Приклад з презентації, на якому зручно показувати роботу алгоритму Дейкстри.</p>
+            </div>
+
+            <section class="lecture-section">
+                <h2 class="section-title">Зв'язок із редактором</h2>
+                <p>У редакторі графів можна побудувати зважений граф, вибрати стартову вершину і відразу перевірити, як алгоритм Дейкстри знаходить найкоротші маршрути. Це зручно для практики і для самоперевірки після лекції.</p>
+            </section>
+
+            <div class="lecture-block question-block">
+                <div class="block-title">Питання для самоперевірки</div>
+                <ul class="questions-list">
+                    <li>Чому Дейкстра не працює з від'ємними вагами?</li>
+                    <li>Що означає мітка вершини у процесі роботи алгоритму?</li>
+                    <li>Як відновити сам шлях після завершення обчислень?</li>
+                </ul>
+            </div>
+
+            <nav class="lecture-navigation">
+                <button class="nav-btn prev-lecture" onclick="location.href='lecture4.html'">Попередня лекція</button>
+                <a class="nav-btn download-lecture" href="../../%D0%BB%D0%B5%D0%BA%D1%86%D1%96%D1%97/%D0%9B%D0%B5%D0%BA%D1%86%D1%96%D1%8F-5_%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D0%B8.pptx" download>Презентація</a>
+                <button class="nav-btn next-lecture" onclick="location.href='../lectures.html'">До списку лекцій</button>
+            </nav>
+        </article>
+    </main>
+
+    <footer class="footer-modern">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <p class="footer-copy">Об'єднуємо теорію та практику для навчання графам у професійному стилі.</p>
+            </div>
+            <div class="footer-links">
+                <a class="footer-link" href="../lectures.html">Лекції</a>
+                <a class="footer-link" href="../graph_editor.html">Редактор графів</a>
+                <a class="footer-link" href="../quiz.html">Тести</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js" defer></script>
+    <script src="../../assets/js/app.js" defer></script>
+</body>
+
+</html>

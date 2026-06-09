@@ -58,6 +58,11 @@
                 <p>Один і той самий граф можна показати малюнком, таблицею або списком. Вибір подання залежить від задачі: для обчислень зручні матриці та списки, для пояснення - графічна схема.</p>
             </section>
 
+            <div class="image-container lecture-media">
+                <img src="../../assets/images/lectures/lecture2-graph-example.png" alt="Приклад графа з презентації">
+                <p class="image-caption">Приклад графа з вагами зі слайдів лекції про подання графів.</p>
+            </div>
+
             <div class="lecture-block definition">
                 <div class="block-title">Матриця суміжності</div>
                 <p>Квадратна матриця, де елемент aij дорівнює 1, якщо між вершинами i та j є ребро, і 0, якщо ребра немає. Для зваженого графа замість 1 записують вагу ребра.</p>
@@ -111,15 +116,23 @@
 
             <nav class="lecture-navigation">
                 <button class="nav-btn prev-lecture" onclick="location.href='lecture1.html'">Попередня лекція</button>
-                <button class="nav-btn test-lecture" onclick="location.href='../graph_editor.html'">Відкрити редактор</button>
+                <a class="nav-btn download-lecture" href="../../%D0%BB%D0%B5%D0%BA%D1%86%D1%96%D1%97/%D0%9B%D0%B5%D0%BA%D1%86%D1%96%D1%8F%202_%D0%93%D1%80%D0%B0%D1%84%D0%B8_2025%20.pptx" download>Презентація</a>
                 <button class="nav-btn next-lecture" onclick="location.href='lecture3.html'">Наступна лекція</button>
             </nav>
         </article>
     </main>
 
-    <footer class="footer">
-        <div class="footer__content">
-            <p class="footer__text">© 2026 | Graphly - навчальний редактор графів</p>
+    <footer class="footer-modern">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <p class="footer-copy">Об'єднуємо теорію та практику для навчання графам у професійному стилі.</p>
+            </div>
+            <div class="footer-links">
+                <a class="footer-link" href="../lectures.html">Лекції</a>
+                <a class="footer-link" href="../graph_editor.html">Редактор графів</a>
+                <a class="footer-link" href="../quiz.html">Тести</a>
+            </div>
         </div>
     </footer>
 
