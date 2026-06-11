@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - Практична робота №1</title>
+
+    <!-- Theme flash prevention -->
+    <script>
+        (function() {
+            const THEME_KEY = 'graphly-theme';
+            const theme = localStorage.getItem(THEME_KEY) ||
+                (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/platform.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/lecture_content.css">
+
+    <style>
+        /* Стили для страницы материала */
+        .page-shell {
+            min-height: calc(100vh - 200px);
+            padding-bottom: 2rem;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .material-header {
+            margin: 2rem 0 3rem;
+            text-align: center;
+        }
+
+        .material-badge {
+            display: inline-block;
+            background: var(--color-blue-500);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .material-title {
+            font-size: 2.5rem;
+            color: var(--color-black-300);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .material-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-black-100);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .material-content {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--color-blue-500);
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-blue-100);
+        }
+
+        .material-text {
+            line-height: 1.8;
+            color: var(--color-black-100);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .material-list {
+            list-style: none;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .material-list li {
+            margin-bottom: 0.75rem;
+            color: var(--color-black-100);
+            position: relative;
+            line-height: 1.6;
+            padding-left: 0.5rem;
+        }
+
+        .material-list li:before {
+            content: "•";
+            color: var(--color-blue-500);
+            position: absolute;
+            left: -1rem;
+            font-size: 1.5rem;
+        }
+
+        .task-block {
+            background: var(--color-white-200);
+            border-left: 4px solid var(--color-blue-500);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .task-title {
+            color: var(--color-blue-500);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .task-title i {
+            font-size: 1.2rem;
+        }
+
+        .example-block {
+            background: var(--color-white-100);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-small);
+        }
+
+        .example-title {
+            color: var(--color-black-300);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 3rem 0 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--color-blue-500);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-blue-600);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 112, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-blue-500);
+            border: 2px solid var(--color-blue-500);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-blue-100);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .material-content {
+                padding: 1.5rem;
+            }
+
+            .material-title {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 0 1rem;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .navigation-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Хедер -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="../index.html" class="nav__logo">
+                    <i class="ri-organization-chart"></i> Graphly
+                </a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../index.html" class="nav__link">Головна</a></li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Матеріали<i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="lectures.html" class="dropdown__link"><i class="ri-book-open-line"></i> Лекції</a></li>
+                            <li><a href="practical_work_new.html" class="dropdown__link"><i class="ri-file-list-3-line"></i> Практичні роботи</a></li>
+                            <li><a href="assignments.html" class="dropdown__link"><i class="ri-file-code-line"></i> Завдання</a></li>
+                            <li><a href="independent_work.html" class="dropdown__link"><i class="ri-user-line"></i> Самостійні роботи</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Інструменти <i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="graph_editor.html" class="dropdown__link"><i class="ri-pencil-ruler-line"></i> Редактор графів</a></li>
+                            <li><a href="algorithms.html" class="dropdown__link"><i class="ri-search-line"></i> Алгоритми</a></li>
+                            <li><a href="graph_visualization.html" class="dropdown__link"><i class="ri-eye-line"></i> Візуалізація графів</a></li>
+                            <li><a href="graph_analysis.html" class="dropdown__link"><i class="ri-bar-chart-box-line"></i> Аналіз графів</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Тестування знань <i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="quiz.html" class="dropdown__link"><i class="ri-question-line"></i> Перевірка знань</a></li>
+                            <li><a href="pdf_tests.html" class="dropdown__link"><i class="ri-file-pdf-line"></i> PDF Тести</a></li>
+                            <li><a href="assessment.html" class="dropdown__link"><i class="ri-award-line"></i> Оцінювання</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="support.html" class="nav__link">Підтримка</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Кнопка темы -->
+    <button id="theme-toggle" class="theme-switcher theme-float" type="button" aria-label="Увімкнути темну тему">
+        <i class="ri-moon-line"></i>
+    </button>
+
+    <!-- Основной контент -->
+    <main class="page-shell">
+        <section class="content-section">
+            <div class="material-header">
+                <span class="material-badge">Практична робота №1</span>
+                <h1 class="material-title">Графи. Способи задання графів</h1>
+                <p class="material-subtitle">
+                    Вивчення основних понять теорії графів та способів їх представлення: графічне, матричне, список суміжності.
+                </p>
+            </div>
+
+            <div class="material-content">
+                <a href="practical_work_new.html" class="btn-secondary" style="margin-bottom: 2rem;">
+                    <i class="ri-arrow-left-line"></i> До списку практичних робіт
+                </a>
+
+                <h2 class="section-title"><i class="ri-target-line"></i> Мета роботи</h2>
+                <p class="material-text">
+                    Оволодіти основними поняттями теорії графів та навчитися представляти графи різними способами:
+                    графічно, за допомогою матриць та списків суміжності.
+                </p>
+
+                <h2 class="section-title"><i class="ri-book-open-line"></i> Теоретичні відомості</h2>
+
+                <h3>1. Основні поняття</h3>
+                <p class="material-text">
+                    <strong>Граф</strong> - це пара G = (V, E), де V - множина вершин, а E - множина ребер.
+                    Кожне ребро з'єднує дві вершини (або одну вершину з собою у випадку петлі).
+                </p>
+
+                <ul class="material-list">
+                    <li><strong>Вершина (node)</strong> - основний елемент графа</li>
+                    <li><strong>Ребро (edge)</strong> - зв'язок між двома вершинами</li>
+                    <li><strong>Степінь вершини</strong> - кількість ребер, інцидентних вершині</li>
+                    <li><strong>Петля (loop)</strong> - ребро, що з'єднує вершину саму з собою</li>
+                    <li><strong>Кратне ребро</strong> - кілька ребер між одними і тими ж вершинами</li>
+                </ul>
+
+                <h3>2. Види графів</h3>
+                <div class="example-block">
+                    <h4 class="example-title">Неорієнтований граф</h4>
+                    <p class="material-text">Ребра не мають напрямку. Ребро {u, v} з'єднує вершини u та v без вказівки порядку.</p>
+
+                    <h4 class="example-title">Орієнтований граф (діграф)</h4>
+                    <p class="material-text">Ребра мають напрямок. Ребро (u, v) веде від вершини u до вершини v.</p>
+
+                    <h4 class="example-title">Простий граф</h4>
+                    <p class="material-text">Не містить петель та кратних ребер.</p>
+
+                    <h4 class="example-title">Мультиграф</h4>
+                    <p class="material-text">Може містити кратні ребра.</p>
+                </div>
+
+                <h2 class="section-title"><i class="ri-list-check-2"></i> Способи представлення графів</h2>
+
+                <div class="task-block">
+                    <h3 class="task-title"><i class="ri-image-line"></i> 1. Графічне представлення</h3>
+                    <p class="material-text">
+                        Вершини зображуються точками або кружками, ребра - лініями між ними.
+                    </p>
+
+                    <div class="example-block">
+                        <h4 class="example-title">Приклад графічного представлення:</h4>
+                        <p class="material-text">
+                            Граф з 4 вершинами: V = {1, 2, 3, 4}<br>
+                            Ребра: E = {{1,2}, {1,3}, {2,3}, {3,4}}
+                        </p>
+                        <div style="text-align: center; margin: 1.5rem 0;">
+                            <div style="display: inline-block; padding: 2rem; background: #f8f9fa; border-radius: 8px;">
+                                ● 1 ———— ● 2<br>
+                                │ ╲       │<br>
+                                │  ╲      │<br>
+                                │   ╲     │<br>
+                                ● 3 ———— ● 4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-block">
+                    <h3 class="task-title"><i class="ri-table-line"></i> 2. Матриця суміжності</h3>
+                    <p class="material-text">
+                        Квадратна матрица розміром n×n, де n - кількість вершин.
+                        Елемент a[i][j] = 1, якщо існує ребро з вершин�� i до вершини j, інакше 0.
+                    </p>
+
+                    <div class="code-block">
+                        // Матриця суміжності для графа вище:<br>
+                        A = [<br>
+                        &nbsp;&nbsp;[0, 1, 1, 0],  // Вершина 1<br>
+                        &nbsp;&nbsp;[1, 0, 1, 0],  // Вершина 2<br>
+                        &nbsp;&nbsp;[1, 1, 0, 1],  // Вершина 3<br>
+                        &nbsp;&nbsp;[0, 0, 1, 0]   // Вершина 4<br>
+                        ]
+                    </div>
+                </div>
+
+                <div class="task-block">
+                    <h3 class="task-title"><i class="ri-list-unordered"></i> 3. Список суміжності</h3>
+                    <p class="material-text">
+                        Для кожної вершини зберігається список вершин, суміжних з нею.
+                    </p>
+
+                    <div class="code-block">
+                        // Список суміжності для графа вище:<br>
+                        1: [2, 3]<br>
+                        2: [1, 3]<br>
+                        3: [1, 2, 4]<br>
+                        4: [3]
+                    </div>
+                </div>
+
+                <h2 class="section-title"><i class="ri-task-line"></i> Практичні завдання</h2>
+
+                <div class="task-block">
+                    <h3 class="task-title"><i class="ri-edit-line"></i> Завдання 1: Побудова графа</h3>
+                    <p class="material-text">
+                        Побудуйте граф за заданою матрицею суміжності:
+                    </p>
+                    <div class="code-block">
+                        B = [<br>
+                        &nbsp;&nbsp;[0, 1, 0, 1],<br>
+                        &nbsp;&nbsp;[1, 0, 1, 0],<br>
+                        &nbsp;&nbsp;[0, 1, 0, 1],<br>
+                        &nbsp;&nbsp;[1, 0, 1, 0]<br>
+                        ]
+                    </div>
+                    <p class="material-text">
+                        <strong>Запитання:</strong><br>
+                        1. Скільки вершин у графі?<br>
+                        2. Який степінь кожної вершини?<br>
+                        3. Чи є графи ізольовані вершини?
+                    </p>
+                </div>
+
+                <div class="task-block">
+                    <h3 class="task-title"><i class="ri-edit-line"></i> Завдання 2: Перетворення представлень</h3>
+                    <p class="material-text">
+                        Дано список суміжності:
+                    </p>
+                    <div class="code-block">
+                        1: [2, 4]<br>
+                        2: [1, 3, 5]<br>
+                        3: [2, 6]<br>
+                        4: [1, 5]<br>
+                        5: [2, 4, 6]<br>
+                        6: [3, 5]
+                    </div>
+                    <p class="material-text">
+                        <strong>Завдання:</strong><br>
+                        1. Побудуйте графічне представлення<br>
+                        2. Складіть матрицю суміжності<br>
+                        3. Визначте, чи є граф повним
+                    </p>
+                </div>
+
+                <div class="task-block">
+                    <h3 class="task-title"><i class="ri-edit-line"></i> Завдання 3: Аналіз графа</h3>
+                    <p class="material-text">
+                        Проаналізуйте наведений граф та дайте відповіді на питання:
+                    </p>
+                    <div style="text-align: center; margin: 1.5rem 0;">
+                        <div style="display: inline-block; padding: 2rem; background: #f8f9fa; border-radius: 8px;">
+                            ● A ———— ● B ———— ● C<br>
+                            │         │         │<br>
+                            │         │         │<br>
+                            ● D ———— ● E ———— ● F<br>
+                            │         │<br>
+                            │         │<br>
+                            ● G ———— ● H
+                        </div>
+                    </div>
+                    <p class="material-text">
+                        <strong>Запитання:</strong><br>
+                        1. Скільки вершин та ребер у графі?<br>
+                        2. Знайдіть вершину з найбільшим степенем<br>
+                        3. Чи є в графі цикли?<br>
+                        4. Чи є граф зв'язним?
+                    </p>
+                </div>
+
+                <h2 class="section-title"><i class="ri-lightbulb-line"></i> Висновки</h2>
+                <p class="material-text">
+                    Після виконання цієї практичної роботи ви повинні:<br>
+                    1. Розуміти основні поняття теорії графів<br>
+                    2. Вміти представляти графи різними способами<br>
+                    3. Могти перетворювати одне представлення в інше<br>
+                    4. Аналізувати властивості графів
+                </p>
+
+                <div class="navigation-buttons">
+                    <a href="practical_work_new.html" class="btn-secondary">
+                        <i class="ri-arrow-left-line"></i> До списку робіт
+                    </a>
+                    <a href="practical_work_2.html" class="btn-primary">
+                        Наступна робота <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer-modern">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <p class="footer-copy">Об'єднуємо теорію та практику для навчання графам у професійному стилі.</p>
+            </div>
+            <div class="footer-links">
+                <a class="footer-link" href="lectures.html">Лекції</a>
+                <a class="footer-link" href="practical_work_new.html">Практичні роботи</a>
+                <a class="footer-link" href="graph_editor.html">Редактор графів</a>
+                <a class="footer-link" href="algorithms.html">Алгоритми</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+
+    <script>
+        // Инициализация темы
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    const currentTheme = document.documentElement.dataset.theme;
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.dataset.theme = newTheme;
+                    localStorage.setItem('graphly-theme', newTheme);
+
+                    this.innerHTML = newTheme === 'dark'
+                        ? '<i class="ri-sun-line"></i>'
+                        : '<i class="ri-moon-line"></i>';
+
+                    this.setAttribute('aria-label',
+                        newTheme === 'dark'
+                            ? 'Увімкнути світлу тему'
+                            : 'Увімкнути темну тему');
+                });
+
+                const savedTheme = localStorage.getItem('graphly-theme') || 'light';
+                themeToggle.innerHTML = savedTheme === 'dark'
+                    ? '<i class="ri-sun-line"></i>'
+                    : '<i class="ri-moon-line"></i>';
+            }
+        });
+    </script>
+</body>
+</html>

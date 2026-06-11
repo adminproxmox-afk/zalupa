@@ -1,0 +1,50 @@
+    </main>
+
+    <footer class="footer-modern">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <p class="footer-copy">Об'єднуємо теорію та практику для навчання графам у професійному стилі.</p>
+            </div>
+            <div class="footer-links">
+                <a class="footer-link" href="../src/lectures.html">Лекції</a>
+                <a class="footer-link" href="../src/practical_work_new.html">Практичні роботи</a>
+                <a class="footer-link" href="../src/graph_editor.html">Редактор графів</a>
+                <a class="footer-link" href="../src/algorithms.html">Алгоритми</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+
+    <script>
+        // Инициализация темы
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    const currentTheme = document.documentElement.dataset.theme;
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.dataset.theme = newTheme;
+                    localStorage.setItem('graphly-theme', newTheme);
+
+                    this.innerHTML = newTheme === 'dark'
+                        ? '<i class="ri-sun-line"></i>'
+                        : '<i class="ri-moon-line"></i>';
+
+                    this.setAttribute('aria-label',
+                        newTheme === 'dark'
+                            ? 'Увімкнути світлу тему'
+                            : 'Увімкнути темну тему');
+                });
+
+                const savedTheme = localStorage.getItem('graphly-theme') || 'light';
+                themeToggle.innerHTML = savedTheme === 'dark'
+                    ? '<i class="ri-sun-line"></i>'
+                    : '<i class="ri-moon-line"></i>';
+            }
+        });
+    </script>
+</body>
+</html>

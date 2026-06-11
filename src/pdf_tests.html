@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - PDF Тести</title>
+
+    <!-- Theme flash prevention -->
+    <script>
+        (function() {
+            const THEME_KEY = 'graphly-theme';
+            const theme = localStorage.getItem(THEME_KEY) ||
+                (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/platform.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/lecture_content.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="../index.html" class="nav__logo">
+                    <i class="ri-organization-chart"></i> Graphly
+                </a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../index.html" class="nav__link">Головна</a></li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Матеріали<i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="lectures.html" class="dropdown__link"><i class="ri-book-open-line"></i> Лекції</a></li>
+                            <li><a href="practical_work_new.html" class="dropdown__link"><i class="ri-file-list-3-line"></i> Практичні роботи</a></li>
+                            <li><a href="assignments.html" class="dropdown__link"><i class="ri-file-code-line"></i> Завдання</a></li>
+                            <li><a href="independent_work.html" class="dropdown__link"><i class="ri-user-line"></i> Самостійні роботи</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Інструменти <i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="graph_editor.html" class="dropdown__link"><i class="ri-pencil-ruler-line"></i> Редактор графів</a></li>
+                            <li><a href="algorithms.html" class="dropdown__link"><i class="ri-search-line"></i> Алгоритми</a></li>
+                            <li><a href="graph_visualization.html" class="dropdown__link"><i class="ri-eye-line"></i> Візуалізація графів</a></li>
+                            <li><a href="graph_analysis.html" class="dropdown__link"><i class="ri-bar-chart-box-line"></i> Аналіз графів</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Тестування знань <i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="quiz.html" class="dropdown__link"><i class="ri-question-line"></i> Перевірка знань</a></li>
+                            <li><a href="pdf_tests.html" class="dropdown__link"><i class="ri-file-pdf-line"></i> PDF Тести</a></li>
+                            <li><a href="assessment.html" class="dropdown__link"><i class="ri-award-line"></i> Оцінювання</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="support.html" class="nav__link">Підтримка</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <button id="theme-toggle" class="theme-switcher theme-float" type="button" aria-label="Увімкнути темну тему">
+        <i class="ri-moon-line"></i>
+    </button>
+
+    <main class="page-shell">
+        <section class="page-hero">
+            <div>
+                <p class="page-kicker">PDF Тести</p>
+                <h1 class="page-title">Тести у форматі PDF</h1>
+                <p class="page-lead">Зберігайте тести у форматі PDF для офлайн-використання, друку та подальшого аналізу. Кожен тест містить питання різного рівня складності.</p>
+            </div>
+            <aside class="page-stat"><strong>3</strong> PDF тести</aside>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="tests-intro">
+                    <h2><i class="ri-information-line"></i> Як користуватися PDF тестами</h2>
+                    <div class="instructions-grid">
+                        <div class="instruction-card">
+                            <i class="ri-download-line"></i>
+                            <h3>Завантажте тест</h3>
+                            <p>Завантажте PDF файл на свій пристрій для офлайн1 використання.</p>
+                        </div>
+                        <div class="instruction-card">
+                            <i class="ri-printer-line"></i>
+                            <h3>Надрукуйте</h3>
+                            <p>Роздрукуйте тест для роботи на папері з ручкою.</p>
+                        </div>
+                        <div class="instruction-card">
+                            <i class="ri-edit-line"></i>
+                            <h3>Виконуйте завдання</h3>
+                            <p>Виконуйте завдання без підказок для об'єктивної перевірки знань.</p>
+                        </div>
+                        <div class="instruction-card">
+                            <i class="ri-check-double-line"></i>
+                            <h3>Перевірте відповіді</h3>
+                            <p>Використовуйте ключі відповідей для самоперевірки.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdf-tests-grid">
+                    <!-- Тест 1 -->
+                    <article class="pdf-test-card">
+                        <div class="pdf-test-header">
+                            <span class="pdf-test-badge">Тест 1</span>
+                            <h2 class="pdf-test-title">Основи теорії графів</h2>
+                        </div>
+                        <div class="pdf-test-content">
+                            <p><strong>Тема:</strong> Базові поняття теорії графів</p>
+                            <p><strong>Кількість питань:</strong> 25</p>
+                            <p><strong>Час виконання:</strong> 45 хвилин</p>
+                            <p><strong>Рівень складності:</strong> Початковий</p>
+
+                            <div class="pdf-test-topics">
+                                <h3><i class="ri-bookmark-line"></i> Темы що охоплює тест:</h3>
+                                <ul>
+                                    <li>Основні поняття: вершини, ребра, степінь</li>
+                                    <li>Види графів: орієнтовані/неорієнтовані</li>
+                                    <li>Матриці суміжності та інцидентності</li>
+                                    <li>Списки суміжності</li>
+                                    <li>Прості графи, мультиграфи</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pdf-test-footer">
+                            <a href="../тести/1_osnovi-teori-grafiv.pdf" class="btn-primary" download>
+                                <i class="ri-download-line"></i> Завантажити PDF
+                            </a>
+                            <button onclick="openPDF('../тести/1_osnovi-teori-grafiv.pdf')" class="btn-secondary">
+                                <i class="ri-eye-line"></i> Переглянути в браузері
+                            </button>
+                            <button onclick="showTestAnswers(1)" class="btn-secondary">
+                                <i class="ri-key-line"></i> Ключ відповідей
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Тест 2 -->
+                    <article class="pdf-test-card">
+                        <div class="pdf-test-header">
+                            <span class="pdf-test-badge">Тест 2</span>
+                            <h2 class="pdf-test-title">Подання та операції над графами</h2>
+                        </div>
+                        <div class="pdf-test-content">
+                            <p><strong>Тема:</strong> Способи представлення графів та операції з ними</p>
+                            <p><strong>Кількість питань:</strong> 30</p>
+                            <p><strong>Час виконання:</strong> 60 хвилин</p>
+                            <p><strong>Рівень складності:</strong> Середній</p>
+
+                            <div class="pdf-test-topics">
+                                <h3><i class="ri-bookmark-line"></i> Темы що охоплює тест:</h3>
+                                <ul>
+                                    <li>Матричні представлення графів</li>
+                                    <li>Операції над графами</li>
+                                    <li>Підграфи та надграфи</li>
+                                    <li>Ізоморфізм графів</li>
+                                    <li>Зв'язність графів</li>
+                                    <li>Шляхи, цикли, ланцюги</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pdf-test-footer">
+                            <a href="../тести/2_osnovi-teori-grafiv6.pdf" class="btn-primary" download>
+                                <i class="ri-download-line"></i> Завантажити PDF
+                            </a>
+                            <button onclick="openPDF('../тести/2_osnovi-teori-grafiv6.pdf')" class="btn-secondary">
+                                <i class="ri-eye-line"></i> Переглянути в браузері
+                            </button>
+                            <button onclick="showTestAnswers(2)" class="btn-secondary">
+                                <i class="ri-key-line"></i> Ключ відповідей
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Тест 3 -->
+                    <article class="pdf-test-card">
+                        <div class="pdf-test-header">
+                            <span class="pdf-test-badge">Тест 3</span>
+                            <h2 class="pdf-test-title">Алгоритми на графах</h2>
+                        </div>
+                        <div class="pdf-test-content">
+                            <p><strong>Тема:</strong> Алгоритми обходу та пошуку в графах</p>
+                            <p><strong>Кількість питань:</strong> 35</p>
+                            <p><strong>Час виконання:</strong> 75 хвилин</p>
+                            <p><strong>Рівень складності:</strong> Просунутий</p>
+
+                            <div class="pdf-test-topics">
+                                <h3><i class="ri-bookmark-line"></i> Темы що охоплює тест:</h3>
+                                <ul>
+                                    <li>Алгоритми DFS та BFS</li>
+                                    <li>Алгоритм Дейкстри</li>
+                                    <li>Алгоритми Крускала та Пріма</li>
+                                    <li>Дерева та остовні дерева</li>
+                                    <li>Найкоротші шляхи</li>
+                                    <li>Застосування алгоритмів</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pdf-test-footer">
+                            <a href="../тести/3_teoriya-grafiv.pdf" class="btn-primary" download>
+                                <i class="ri-download-line"></i> Завантажити PDF
+                            </a>
+                            <button onclick="openPDF('../тести/3_teoriya-grafiv.pdf')" class="btn-secondary">
+                                <i class="ri-eye-line"></i> Переглянути в браузері
+                            </button>
+                            <button onclick="showTestAnswers(3)" class="btn-secondary">
+                                <i class="ri-key-line"></i> Ключ відповідей
+                            </button>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="test-tips">
+                    <h2><i class="ri-lightbulb-line"></i> Поради щодо виконання тестів</h2>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <i class="ri-time-line"></i>
+                            <h3>Таймінг</h3>
+                            <p>Розподіліть час рівномірно між всіма завданнями. Не затримуйтесь над одним питанням.</p>
+                        </div>
+                        <div class="tip-card">
+                            <i class="ri-file-text-line"></i>
+                            <h3>Читання завдань</h3>
+                            <p>Уважно читайте умови завдань. Часто відповідь міститься в самому питанні.</p>
+                        </div>
+                        <div class="tip-card">
+                            <i class="ri-check-line"></i>
+                            <h3>Перевірка</h3>
+                            <p>Залиште час для перевірки відповідей. Часто знаходяться поми��ки уважності.</p>
+                        </div>
+                        <div class="tip-card">
+                            <i class="ri-refresh-line"></i>
+                            <h3>Аналіз помилок</h3>
+                            <p>Проаналізуйте помилки після тесту для покращення знань.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-modern">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <p class="footer-copy">Об'єднуємо теорію та практику для навчання графам у професійному стилі.</p>
+            </div>
+            <div class="footer-links">
+                <a class="footer-link" href="lectures.html">Лекції</a>
+                <a class="footer-link" href="practical_work_new.html">Практичні роботи</a>
+                <a class="footer-link" href="quiz.html">Інтерактивні тести</a>
+                <a class="footer-link" href="pdf_tests.html">PDF Тести</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+
+    <style>
+        .tests-intro {
+            background: var(--color-white-100);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .tests-intro h2 {
+            color: var(--color-black-300);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .instructions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .instruction-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--color-white-200);
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .instruction-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .instruction-card i {
+            font-size: 2rem;
+            color: var(--color-blue-500);
+            margin-bottom: 1rem;
+        }
+
+        .instruction-card h3 {
+            color: var(--color-black-300);
+            margin-bottom: 0.5rem;
+        }
+
+        .pdf-tests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .pdf-test-card {
+            background: var(--color-white-100);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-medium);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdf-test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .pdf-test-header {
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--color-blue-100);
+            padding-bottom: 1rem;
+        }
+
+        .pdf-test-badge {
+            display: inline-block;
+            background: var(--color-blue-500);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .pdf-test-title {
+            font-size: 1.5rem;
+            color: var(--color-black-300);
+            margin: 0.5rem 0 0;
+        }
+
+        .pdf-test-content {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .pdf-test-content p {
+            color: var(--color-black-100);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .pdf-test-content strong {
+            color: var(--color-black-300);
+        }
+
+        .pdf-test-topics {
+            margin-top: 1.5rem;
+        }
+
+        .pdf-test-topics h3 {
+            color: var(--color-blue-500);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .pdf-test-topics ul {
+            list-style: none;
+            padding-left: 1.5rem;
+            margin: 0;
+        }
+
+        .pdf-test-topics li {
+            margin-bottom: 0.5rem;
+            color: var(--color-black-100);
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .pdf-test-topics li:before {
+            content: "•";
+            color: var(--color-blue-500);
+            position: absolute;
+            left: -1rem;
+        }
+
+        .pdf-test-footer {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+            flex-wrap: wrap;
+        }
+
+        .pdf-test-footer .btn-primary,
+        .pdf-test-footer .btn-secondary {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.75rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: var(--color-blue-500);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-blue-600);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-blue-500);
+            border: 2px solid var(--color-blue-500);
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-blue-100);
+        }
+
+        .test-tips {
+            background: var(--color-white-100);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .test-tips h2 {
+            color: var(--color-black-300);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tip-card {
+            padding: 1.5rem;
+            background: var(--color-white-200);
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tip-card i {
+            font-size: 2rem;
+            color: var(--color-blue-500);
+            margin-bottom: 1rem;
+        }
+
+        .tip-card h3 {
+            color: var(--color-black-300);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .pdf-tests-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pdf-test-footer {
+                flex-direction: column;
+            }
+
+            .pdf-test-footer .btn-primary,
+            .pdf-test-footer .btn-secondary {
+                min-width: 100%;
+            }
+
+            .instructions-grid,
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        function openPDF(filePath) {
+            window.open(filePath, '_blank');
+        }
+
+        function showTestAnswers(testNumber) {
+            const answers = {
+                1: "Ключ відповідей до Тесту 1:\n\n1. A\n2. B\n3. A\n4. C\n5. B\n6. A\n7. C\n8. B\n9. A\n10. C\n\nПовний ключ знаходиться в останній сторінці PDF файлу.",
+                2: "Ключ відповідей до Тесту 2:\n\n1. B\n2. C\n3. A\n4. B\n5. C\n6. A\n7. B\n8. C\n9. A\n10. B\n\nПовний ключ знаходиться в останній сторінці PDF файлу.",
+                3: "Ключ відповідей до Тесту 3:\n\n1. A\n2. C\n3. B\n4. A\n5. C\n6. B\n7. A\n8. C\n9. B\n10. A\n\nПовний ключ знаходиться в останній сторінці PDF файлу."
+            };
+
+            alert(answers[testNumber] || "Ключ відповідей знаходиться в останній сторінці PDF файлу.");
+        }
+
+        // Инициализация темы
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    const currentTheme = document.documentElement.dataset.theme;
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.dataset.theme = newTheme;
+                    localStorage.setItem('graphly-theme', newTheme);
+
+                    this.innerHTML = newTheme === 'dark'
+                        ? '<i class="ri-sun-line"></i>'
+                        : '<i class="ri-moon-line"></i>';
+
+                    this.setAttribute('aria-label',
+                        newTheme === 'dark'
+                            ? 'Увімкнути світлу тему'
+                            : 'Увімкнути темну тему');
+                });
+
+                const savedTheme = localStorage.getItem('graphly-theme') || 'light';
+                themeToggle.innerHTML = savedTheme === 'dark'
+                    ? '<i class="ri-sun-line"></i>'
+                    : '<i class="ri-moon-line"></i>';
+            }
+        });
+    </script>
+</body>
+</html>

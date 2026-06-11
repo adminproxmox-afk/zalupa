@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphly - Самостійні роботи</title>
+
+    <!-- Theme flash prevention -->
+    <script>
+        (function() {
+            const THEME_KEY = 'graphly-theme';
+            const theme = localStorage.getItem(THEME_KEY) ||
+                (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/platform.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/lecture_content.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="../index.html" class="nav__logo">
+                    <i class="ri-organization-chart"></i> Graphly
+                </a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../index.html" class="nav__link">Головна</a></li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Матеріали<i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="lectures.html" class="dropdown__link"><i class="ri-book-open-line"></i> Лекції</a></li>
+                            <li><a href="practical_work_new.html" class="dropdown__link"><i class="ri-file-list-3-line"></i> Практичні роботи</a></li>
+                            <li><a href="assignments.html" class="dropdown__link"><i class="ri-file-code-line"></i> Завдання</a></li>
+                            <li><a href="independent_work.html" class="dropdown__link"><i class="ri-user-line"></i> Самостійні роботи</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Інструменти <i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="graph_editor.html" class="dropdown__link"><i class="ri-pencil-ruler-line"></i> Редактор графів</a></li>
+                            <li><a href="algorithms.html" class="dropdown__link"><i class="ri-search-line"></i> Алгоритми</a></li>
+                            <li><a href="graph_visualization.html" class="dropdown__link"><i class="ri-eye-line"></i> Візуалізація графів</a></li>
+                            <li><a href="graph_analysis.html" class="dropdown__link"><i class="ri-bar-chart-box-line"></i> Аналіз графів</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link">Тестування знань <i class="ri-arrow-down-s-line dropdown__arrow"></i></div>
+                        <ul class="dropdown__menu">
+                            <li><a href="quiz.html" class="dropdown__link"><i class="ri-question-line"></i> Перевірка знань</a></li>
+                            <li><a href="assessment.html" class="dropdown__link"><i class="ri-award-line"></i> Оцінювання</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="support.html" class="nav__link">Підтримка</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <button id="theme-toggle" class="theme-switcher theme-float" type="button" aria-label="Увімкнути темну тему">
+        <i class="ri-moon-line"></i>
+    </button>
+
+    <main class="page-shell">
+        <section class="page-hero">
+            <div>
+                <p class="page-kicker">Самостійна робота</p>
+                <h1 class="page-title">Самостійні роботи</h1>
+                <p class="page-lead">Завдання для самостійного вивчення та закріплення матеріалу. Ідеально для підготовки до практичних занять.</p>
+            </div>
+            <aside class="page-stat"><strong>1</strong> самостійна робота</aside>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="work-list">
+                    <!-- Самостійна робота 1 -->
+                    <article class="work-card">
+                        <div class="work-card-header">
+                            <span class="work-number">СР №1</span>
+                            <h2 class="work-title">Самостійна робота до Практичної роботи 1</h2>
+                        </div>
+                        <div class="work-card-content">
+                            <p>Самостійна робота для закріплення знань з теми "Графи та способи їх задання". Містить теоретичні питання та практичні завдання.</p>
+
+                            <div class="work-objectives">
+                                <h3><i class="ri-target-line"></i> Цілі роботи:</h3>
+                                <ul class="work-features">
+                                    <li><i class="ri-check-line"></i> Закріпити знання про основні поняття теорії графів</li>
+                                    <li><i class="ri-check-line"></i> Навчитися будувати графи за заданими умовами</li>
+                                    <li><i class="ri-check-line"></i> Оволодіти різними способами представлення графів</li>
+                                    <li><i class="ri-check-line"></i> Навчитися обчислювати степені вершин</li>
+                                </ul>
+                            </div>
+
+                            <div class="work-tasks">
+                                <h3><i class="ri-task-line"></i> Завдання:</h3>
+                                <ul class="work-features">
+                                    <li><i class="ri-edit-line"></i> <strong>Завдання 1:</strong> Побудувати граф за заданою матрицею суміжності</li>
+                                    <li><i class="ri-edit-line"></i> <strong>Завдання 2:</strong> Скласти список суміжності для заданого графа</li>
+                                    <li><i class="ri-edit-line"></i> <strong>Завдання 3:</strong> Обчислити степені вершин графа</li>
+                                    <li><i class="ri-edit-line"></i> <strong>Завдання 4:</strong> Визначити, чи є граф повним, регулярним, деревом</li>
+                                    <li><i class="ri-edit-line"></i> <strong>Завдання 5:</strong> Побудувати матрицю інцидентності</li>
+                                </ul>
+                            </div>
+
+                            <div class="work-instructions">
+                                <h3><i class="ri-information-line"></i> Інструкції:</h3>
+                                <p>Виконайте всі завдання у зошиті або за допомогою графічного редактора. Для кожного завдання наведіть детальні розрахунки та пояснення.</p>
+                            </div>
+                        </div>
+                        <div class="work-card-footer">
+                            <a href="../самостійні работи/Самостійна робота до Пр_1.docx"
+                               class="btn-primary" download>
+                                <i class="ri-download-line"></i> Завантажити DOCX
+                            </a>
+                            <button onclick="openFile('../самостійні работи/Самостійна робота до Пр_1.docx')"
+                                    class="btn-secondary">
+                                <i class="ri-eye-line"></i> Переглянути завдання
+                            </button>
+                            <button onclick="showAnswerTemplate()"
+                                    class="btn-secondary">
+                                <i class="ri-file-text-line"></i> Шаблон відповіді
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Додаткові матеріали -->
+                    <article class="work-card additional-materials">
+                        <div class="work-card-header">
+                            <span class="work-number"><i class="ri-book-open-line"></i></span>
+                            <h2 class="work-title">Додаткові матеріали для самостійної роботи</h2>
+                        </div>
+                        <div class="work-card-content">
+                            <p>Корисні ресурси для глибшого вивчення теми та підготовки до самостійної роботи.</p>
+
+                            <div class="materials-list">
+                                <div class="material-item">
+                                    <h4><i class="ri-video-line"></i> Відеоуроки:</h4>
+                                    <ul>
+                                        <li>Основи теорії графів - вступ</li>
+                                        <li>Матриці суміжності та інцидентності</li>
+                                        <li>Побудова графів на практиці</li>
+                                    </ul>
+                                </div>
+
+                                <div class="material-item">
+                                    <h4><i class="ri-article-line"></i> Статті та посібники:</h4>
+                                    <ul>
+                                        <li>Теорія графів для початківців</li>
+                                        <li>Приклади розв'язання типових задач</li>
+                                        <li>Методичні рекомендації</li>
+                                    </ul>
+                                </div>
+
+                                <div class="material-item">
+                                    <h4><i class="ri-tools-line"></i> Інструменти:</h4>
+                                    <ul>
+                                        <li>Онлайн редактор графів</li>
+                                        <li>Калькулятор степенів вершин</li>
+                                        <li>Генератор матриць</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-card-footer">
+                            <button onclick="openGraphEditor()" class="btn-primary">
+                                <i class="ri-pencil-ruler-line"></i> Відкрити редактор
+                            </button>
+                            <button onclick="showExamples()" class="btn-secondary">
+                                <i class="ri-lightbulb-line"></i> Приклади рішень
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-modern">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="nav__logo"><i class="ri-organization-chart"></i> Graphly</a>
+                <p class="footer-copy">Об'єднуємо теорію та практику для навчання графам у професійному стилі.</p>
+            </div>
+            <div class="footer-links">
+                <a class="footer-link" href="lectures.html">Лекції</a>
+                <a class="footer-link" href="practical_work_new.html">Практичні роботи</a>
+                <a class="footer-link" href="graph_editor.html">Редактор графів</a>
+                <a class="footer-link" href="quiz.html">Тести</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+
+    <style>
+        .work-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .work-card {
+            background: var(--color-white-100);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-medium);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .work-card-header {
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--color-blue-100);
+            padding-bottom: 1rem;
+        }
+
+        .work-number {
+            display: inline-block;
+            background: var(--color-blue-500);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-title {
+            font-size: 1.5rem;
+            color: var(--color-black-300);
+            margin: 0.5rem 0 0;
+        }
+
+        .work-card-content {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .work-card-content p {
+            color: var(--color-black-100);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .work-objectives,
+        .work-tasks,
+        .work-instructions,
+        .materials-list {
+            margin-bottom: 1.5rem;
+        }
+
+        .work-objectives h3,
+        .work-tasks h3,
+        .work-instructions h3,
+        .material-item h4 {
+            color: var(--color-blue-500);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .work-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .work-features li {
+            margin-bottom: 0.5rem;
+            color: var(--color-black-100);
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.5;
+        }
+
+        .work-features i {
+            color: var(--color-blue-500);
+            margin-right: 0.5rem;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .work-features strong {
+            color: var(--color-black-300);
+            margin-right: 0.25rem;
+        }
+
+        .materials-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .material-item ul {
+            list-style: none;
+            padding-left: 1.5rem;
+            margin: 0;
+        }
+
+        .material-item li {
+            margin-bottom: 0.25rem;
+            color: var(--color-black-100);
+            position: relative;
+        }
+
+        .material-item li:before {
+            content: "•";
+            color: var(--color-blue-500);
+            position: absolute;
+            left: -1rem;
+        }
+
+        .work-card-footer {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+            flex-wrap: wrap;
+        }
+
+        .work-card-footer .btn-primary,
+        .work-card-footer .btn-secondary {
+            flex: 1;
+            min-width: 150px;
+            padding: 0.75rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: var(--color-blue-500);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-blue-600);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-blue-500);
+            border: 2px solid var(--color-blue-500);
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-blue-100);
+        }
+
+        .additional-materials {
+            border: 2px dashed var(--color-blue-300);
+            background: var(--color-white-200);
+        }
+
+        @media (max-width: 768px) {
+            .work-list {
+                grid-template-columns: 1fr;
+            }
+
+            .work-card-footer {
+                flex-direction: column;
+            }
+
+            .work-card-footer .btn-primary,
+            .work-card-footer .btn-secondary {
+                min-width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        function openFile(filePath) {
+            window.open(filePath, '_blank');
+        }
+
+        function openGraphEditor() {
+            window.open('graph_editor.html', '_blank');
+        }
+
+        function showAnswerTemplate() {
+            alert('Шаблон відповіді:\n\n1. Завдання: [опишіть завдання]\n2. Розв\'язання:\n   - Крок 1: ...\n   - Крок 2: ...\n   - Крок 3: ...\n3. Відповідь: [остаточна відповідь]\n4. Висновки: [що ви дізналися]');
+        }
+
+        function showExamples() {
+            alert('Приклади рішень будуть доступні в наступних оновленнях. Можете скористатися редактором графів для практики.');
+        }
+
+        // Инициализация темы
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    const currentTheme = document.documentElement.dataset.theme;
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.dataset.theme = newTheme;
+                    localStorage.setItem('graphly-theme', newTheme);
+
+                    this.innerHTML = newTheme === 'dark'
+                        ? '<i class="ri-sun-line"></i>'
+                        : '<i class="ri-moon-line"></i>';
+
+                    this.setAttribute('aria-label',
+                        newTheme === 'dark'
+                            ? 'Увімкнути світлу тему'
+                            : 'Увімкнути темну тему');
+                });
+
+                const savedTheme = localStorage.getItem('graphly-theme') || 'light';
+                themeToggle.innerHTML = savedTheme === 'dark'
+                    ? '<i class="ri-sun-line"></i>'
+                    : '<i class="ri-moon-line"></i>';
+            }
+        });
+    </script>
+</body>
+</html>
